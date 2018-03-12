@@ -35,4 +35,15 @@ RSpec.feature 'Adding new user' do
 
     expect(page).to have_content("minimum is 5 characters")
   end
+
+  scenario 'user name needs to be more than 4 chars' do
+    fill_in 'User name', with: 'a' * 13
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'user_password', with: 'password'
+    fill_in 'user_password_confirmation', with: 'password'
+    click_button 'Sign up'
+
+    expect(page).to have_content("maximum is 12 characters")
+  end
+
 end
