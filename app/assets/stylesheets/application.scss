@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Ubuntu');
+@import "./*";
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.btn{
+  color: #fff;
+  padding: 10px 30px;
+  background-color: rgb(8, 105, 135);
+  border-radius: 8px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  height:100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

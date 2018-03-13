@@ -1,0 +1,21 @@
+.navbar{
+  display: flex;
+  justify-content:space-between;
+  max-width:100%;
+  padding: 15px 30px;
+
+  .nav-header{
+    font-size: 24px;
+    color: black;
+  }
+
+  .nav{
+    display: flex;
+    align-items: center;
+
+    li{
+      padding-right: 20px;
+      list-style: none;
+    }
+  }
+}
