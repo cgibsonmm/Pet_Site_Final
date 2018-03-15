@@ -43,7 +43,7 @@ RSpec.feature 'Adding new user' do
     fill_in 'user_password_confirmation', with: 'password'
     click_button 'Sign up'
 
-    expect(page).to have_content("maximum is 12 characters")
+    expect(page).to have_content("minimum is 5 characters")
   end
 
 end
