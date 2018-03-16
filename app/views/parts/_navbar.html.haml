@@ -1,11 +1,12 @@
 .navbar
   %h3
-    = link_to 'ApetsLyfe', root_path, class: 'nav-header'
+    = link_to 'ApetsLyfe', root_path, class: 'nav-header underline'
   .nav
     - if user_signed_in?
       %li
         = link_to 'Sign Out', destroy_user_session_path, method: :delete
     - else
       %li
-        = link_to 'Sign In', new_user_session_path 
-        = link_to 'Sign Up', new_user_registration_path
+        = link_to 'Sign In', new_user_session_path, class: 'underline'
+      %li
+        = link_to 'Sign Up', new_user_registration_path, class: 'underline'
