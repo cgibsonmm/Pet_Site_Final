@@ -1,0 +1,6 @@
+%h3 User Profile
+
+= simple_form_for([current_user, @user_profile]) do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.submit
