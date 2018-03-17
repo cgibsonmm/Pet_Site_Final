@@ -15,7 +15,7 @@ class UserProfileController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Error, updating profile"
-      render @user_profile
+      render 'edit'
     end
   end
 

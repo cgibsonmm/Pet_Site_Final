@@ -3,4 +3,8 @@
 = simple_form_for([current_user, @user_profile]) do |f|
   = f.input :first_name
   = f.input :last_name
+  = f.input :zip_code, label: 'Zip Code'
+  = f.input :city
+  = f.input :state
+  = f.input :country
   = f.submit

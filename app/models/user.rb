@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   def create_user_profile
     @user_profile = UserProfile.create(user_id: self.id)
+    @user_profile.skip_validation = true
     @user_profile.save
   end
 end

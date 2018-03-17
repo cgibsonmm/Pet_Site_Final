@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'haml-rails'
 gem 'devise'
+gem 'country_select'
 
 group :development, :test do
   gem 'rspec-rails', '~>3.7'
