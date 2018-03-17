@@ -1,23 +1,13 @@
 require 'rails_helper'
 
 RSpec.feature "Creating user profile" do
-  def valid_user
-    { first_name: 'valid',
-      last_name: 'Valid',
-      zip_code: 11221,
-      city: 'Brooklyn',
-      state: 'NY',
-      country: 'USA',
-      birthday: 1,   # Must Change to date time
-      sex: 'male'
-    }
-  end
 
   before do
     user = create(:user)
     sign_in_with user
     visit 'users/1/user_profile/1/edit'
   end
+
   context "Valid user" do
     scenario 'can update to a valid user profile' do
       fill_in "First name", with: 'testName'
