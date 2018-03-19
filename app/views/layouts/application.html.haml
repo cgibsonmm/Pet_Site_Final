@@ -10,6 +10,6 @@
     .container
       = render 'parts/navbar'
       = render 'parts/flash'
-      %section
+      %section{class: controller.controller_name}
         -# = render 'parts/photobox'
         = yield
