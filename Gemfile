@@ -33,10 +33,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'jquery-rails'
 gem 'simple_form'
 gem 'haml-rails'
 gem 'devise'
 gem 'country_select'
+
+gem 'paperclip', '~>6.0.0'
+gem 'papercrop'
 
 group :development, :test do
   gem 'rspec-rails', '~>3.7'

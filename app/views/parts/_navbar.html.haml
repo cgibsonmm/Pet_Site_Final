@@ -1,6 +1,8 @@
 .navbar
   %h3
     = link_to 'ApetsLyfe', root_path, class: 'nav-header underline'
+  .links
+    = link_to 'New Post', new_photo_post_path
   .nav
     - if user_signed_in?
       %li

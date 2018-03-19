@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :user_profile, dependent: :destroy
+  has_many :photo_posts, dependent: :destroy
 
   after_save :create_user_profile, on: :create
 

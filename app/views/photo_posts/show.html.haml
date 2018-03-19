@@ -1,0 +1,5 @@
+%h2 View Post
+
+.user_name
+  = @photo_post.user.user_name
+= image_tag @photo_post.image.url(:medium)
