@@ -11,6 +11,9 @@ class PhotoPostsController < ApplicationController
     if @photo_post.save
       flash[:success] = "Successfully, created post take a few seconds and crop it."
       render 'crop'
+    else
+      flash[:error] = "Error, creating post"
+      render 'new'
     end
   end
 
