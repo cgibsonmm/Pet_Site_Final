@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180319200925) do
+ActiveRecord::Schema.define(version: 20180319204904) do
 
   create_table "photo_posts", force: :cascade do |t|
     t.string "caption"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 20180319200925) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.integer "image_original_w"
+    t.integer "image_original_h"
+    t.integer "image_crop_x"
+    t.integer "image_crop_y"
+    t.integer "image_crop_w"
+    t.integer "image_crop_h"
     t.index ["user_id"], name: "index_photo_posts_on_user_id"
   end
 
