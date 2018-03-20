@@ -1,15 +1,18 @@
 require 'rails_helper'
 
 RSpec.feature 'Creating Photo Post' do
+  before do
+    @user = create(:user)
+  end
+
   context 'Signed in user' do
     before do
-      @user = create(:user)
       sign_in_with @user
       visit '/'
       click_link 'New Post'
     end
 
-    scenario 'can creat a new post' do
+    scenario 'can create a new post' do
       attach_file('Image', 'spec/files/images/pet_photo.jpg')
       fill_in 'Caption', with: 'Test photo'
       click_button 'Create'
@@ -29,6 +32,15 @@ RSpec.feature 'Creating Photo Post' do
 
       expect(page).to have_css('div.flash.error')
       expect(page).to have_content('Error, creating post')
+    end
+  end
+
+  context 'User not signed in' do
+    scenario 'will be redirect to sign in' do
+      visit '/'
+      click_link 'New Post'
+
+      expect(page).to have_content('You need to sign in or sign up before')
     end
   end
 end

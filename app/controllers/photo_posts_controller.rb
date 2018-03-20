@@ -1,6 +1,5 @@
 class PhotoPostsController < ApplicationController
-  def index
-  end
+  before_action :authenticate_user! 
 
   def new
     @photo_post = PhotoPost.new
