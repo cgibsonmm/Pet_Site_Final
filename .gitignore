@@ -21,3 +21,7 @@
 /yarn-error.log
 
 .byebug_history
+
+
+# Ignore public system photos
+/public/system/photo_posts

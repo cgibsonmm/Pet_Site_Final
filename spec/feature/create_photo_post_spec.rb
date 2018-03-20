@@ -21,7 +21,7 @@ RSpec.feature 'Creating Photo Post' do
       expect(page).to have_css("img[src*='pet_photo']")
       click_button 'Save'
 
-      expect(page).to have_content('Successfully, cropped photo')
+      expect(page).to have_content('Post Updated')
       expect(page).to have_content(@user.user_name)
       expect(page).to have_css("img[src*='pet_photo']")
     end

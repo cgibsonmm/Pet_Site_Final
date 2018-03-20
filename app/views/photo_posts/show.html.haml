@@ -3,3 +3,7 @@
 .user_name
   = @photo_post.user.user_name
 = image_tag @photo_post.image.url(:medium)
+= @photo_post.caption
+
+.links
+  = link_to 'Edit Post', edit_photo_post_path(@photo_post)

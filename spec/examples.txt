@@ -1,20 +1,21 @@
 example_id                                               | status  | run_time        |
 -------------------------------------------------------- | ------- | --------------- |
-./spec/controllers/home_controller_spec.rb[1:1:1]        | passed  | 0.02102 seconds |
+./spec/controllers/home_controller_spec.rb[1:1:1]        | passed  | 0.01901 seconds |
 ./spec/controllers/photo_posts_controller_spec.rb[1:1:1] | failed  | 0.04347 seconds |
-./spec/feature/create_photo_post_spec.rb[1:1:1]          | passed  | 0.66024 seconds |
-./spec/feature/create_photo_post_spec.rb[1:1:2]          | passed  | 0.07243 seconds |
-./spec/feature/create_photo_post_spec.rb[1:2:1]          | passed  | 0.02555 seconds |
-./spec/feature/creating_user_profile_spec.rb[1:1:1]      | passed  | 0.0946 seconds  |
-./spec/feature/creating_user_profile_spec.rb[1:2:1]      | passed  | 0.11859 seconds |
-./spec/feature/creating_user_spec.rb[1:1]                | passed  | 0.15261 seconds |
-./spec/feature/creating_user_spec.rb[1:2]                | passed  | 0.0658 seconds  |
-./spec/feature/creating_user_spec.rb[1:3]                | passed  | 0.03061 seconds |
-./spec/feature/creating_user_spec.rb[1:4]                | passed  | 0.03977 seconds |
-./spec/feature/creating_user_spec.rb[1:5]                | passed  | 0.03062 seconds |
-./spec/feature/user_auth_spec.rb[1:1]                    | passed  | 0.07345 seconds |
-./spec/feature/user_auth_spec.rb[1:2]                    | passed  | 0.39336 seconds |
-./spec/feature/user_auth_spec.rb[1:3]                    | passed  | 0.04622 seconds |
+./spec/feature/create_photo_post_spec.rb[1:1:1]          | passed  | 0.65554 seconds |
+./spec/feature/create_photo_post_spec.rb[1:1:2]          | passed  | 0.07613 seconds |
+./spec/feature/create_photo_post_spec.rb[1:2:1]          | passed  | 0.02752 seconds |
+./spec/feature/creating_user_profile_spec.rb[1:1:1]      | passed  | 0.76999 seconds |
+./spec/feature/creating_user_profile_spec.rb[1:2:1]      | passed  | 0.12744 seconds |
+./spec/feature/creating_user_spec.rb[1:1]                | passed  | 0.07384 seconds |
+./spec/feature/creating_user_spec.rb[1:2]                | passed  | 0.08029 seconds |
+./spec/feature/creating_user_spec.rb[1:3]                | passed  | 0.03321 seconds |
+./spec/feature/creating_user_spec.rb[1:4]                | passed  | 0.05931 seconds |
+./spec/feature/creating_user_spec.rb[1:5]                | passed  | 0.02934 seconds |
+./spec/feature/edit_posts_spec.rb[1:1:1]                 | passed  | 1.03 seconds    |
+./spec/feature/user_auth_spec.rb[1:1]                    | passed  | 0.04543 seconds |
+./spec/feature/user_auth_spec.rb[1:2]                    | passed  | 0.09281 seconds |
+./spec/feature/user_auth_spec.rb[1:3]                    | passed  | 0.03789 seconds |
 ./spec/helpers/home_helper_spec.rb[1:1]                  | pending | 0.00001 seconds |
 ./spec/helpers/photo_posts_helper_spec.rb[1:1]           | pending | 0.00001 seconds |
 ./spec/helpers/user_profile_helper_spec.rb[1:1]          | pending | 0.00001 seconds |

@@ -1,0 +1,6 @@
+%h3 Edit Post
+= image_tag(@photo_post.image.url(:medium))
+= link_to 'Recrop?', crop_photo_post_path(@photo_post)
+= simple_form_for @photo_post do |f|
+  = f.input :caption
+  = f.submit

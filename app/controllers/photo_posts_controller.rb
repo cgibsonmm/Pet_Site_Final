@@ -1,5 +1,10 @@
 class PhotoPostsController < ApplicationController
-  before_action :authenticate_user! 
+  before_action :authenticate_user!
+  before_action :set_post, only: [:show, :edit, :update, :crop]
+
+  def index
+    @posts = PhotoPost.order('created_at DESC')
+  end
 
   def new
     @photo_post = PhotoPost.new
@@ -17,22 +22,27 @@ class PhotoPostsController < ApplicationController
   end
 
   def show
-    @photo_post = PhotoPost.find(params[:id])
+  end
+
+  def edit
   end
 
   def crop
-    @photo_post = PhotoPost.find(params[:id])
+    render 'crop'
   end
 
   def update
-    @photo_post = PhotoPost.find(params[:id])
     @photo_post.update(update_params)
     @photo_post.save
-    flash[:success] = 'Successfully, cropped photo'
+    flash[:success] = 'Post Updated'
     redirect_to @photo_post
-  end
+   end
 
   private
+
+  def set_post
+    @photo_post = PhotoPost.find(params[:id])
+  end
 
   def post_params
     params.require(:photo_post).permit(:image, :caption)
@@ -40,13 +50,16 @@ class PhotoPostsController < ApplicationController
 
   def update_params
     params.require(:photo_post).permit(
-    :image,
-    :image_original_w,
-    :image_original_h,
-    :image_crop_x,
-    :image_crop_y,
-    :image_crop_w,
-    :image_crop_h
-  )
+      :image,
+      :image_original_w,
+      :image_original_h,
+      :image_crop_x,
+      :image_crop_y,
+      :image_crop_w,
+      :image_crop_h,
+      :image_box_w,
+      :image_aspect,
+      :caption
+    )
   end
 end
