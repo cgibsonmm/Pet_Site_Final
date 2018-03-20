@@ -24,4 +24,4 @@
 
 
 # Ignore public system photos
-/public/system/photo_posts
+/public/system/**
