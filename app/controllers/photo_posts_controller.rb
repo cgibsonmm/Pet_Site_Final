@@ -1,5 +1,5 @@
 class PhotoPostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
   before_action :set_post, only: [:show, :edit, :update, :crop]
   before_action :post_owner?, only: [:edit, :update, :destroy]
 

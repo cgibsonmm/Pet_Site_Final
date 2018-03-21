@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Ubuntu');
 @import "jquery.jcrop";
-@import "./*";
+
+
+
+
+$deep_blue: #558C89;
+$light_blue: #74AFAD;
+$orange: #D9853B;
+$gray: #ECECEA;
 
 *{
   padding: 0;
   margin: 0;
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
+}
+
+body{
+  background-color: $gray;
 }
 
 .container{
@@ -31,7 +42,7 @@ li{
   padding: 10px 30px;
   // // background-color: rgb(8, 105, 135);
   border-radius: 8px;
-  border: none;
+  background-color: $orange;
 }
 
 hr{
@@ -58,3 +69,5 @@ section {
     margin: 0;
   }
 }
+
+@import "./*";
