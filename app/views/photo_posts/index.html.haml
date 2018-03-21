@@ -1,3 +1,9 @@
-- @posts.each do |post|
-  = link_to image_tag(post.image.url(:medium)), photo_post_path(post)
-  = post.caption
+.image_grid
+  - @posts.each do |post|
+    .image_box
+      .user_name
+        = post.user.user_name
+      .pet_photo
+        = link_to image_tag(post.image.url(:medium)), photo_post_path(post)
+      .caption
+        = post.caption

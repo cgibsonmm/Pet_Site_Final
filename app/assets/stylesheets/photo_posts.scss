@@ -1,3 +1,42 @@
 // Place all the styles related to the PhotoPosts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.image_grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  .image_box{
+    flex-basis: 20%;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 5px;
+    .user_name{}
+    .pet_photo{
+      img{
+        padding: 0 5px;
+        max-width: 100%;
+      }
+    }
+    .caption{}
+  }
+}
+
+@media (max-width:1000px) {
+  .image_grid{
+    .image_box{
+      flex-basis: 45%;
+    }
+  }
+}
+
+@media (max-width:500px) {
+  .image_grid{
+    .image_box{
+      flex-basis: 100%;
+    }
+  }
+}

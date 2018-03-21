@@ -11,6 +11,16 @@
     color: black;
   }
 
+  .links{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    a{
+      padding: 0 8px;
+    }
+  }
+
   .nav{
     display: flex;
     align-items: center;
@@ -20,4 +30,24 @@
       list-style: none;
     }
   }
+}
+
+@media (max-width:800px) {
+  .navbar{
+    flex-direction: column;
+    text-align: center;
+    h3{
+      padding-bottom: 10px;
+    }
+    .links{
+      flex-direction: column;
+    }
+    .nav{
+      flex-direction: column;
+      li{
+        padding-right: 0;
+      }
+    }
+  }
+
 }
