@@ -6,4 +6,5 @@
 = @photo_post.caption
 
 .links
-  = link_to 'Edit Post', edit_photo_post_path(@photo_post)
+  - if @photo_post.user_id == current_user.id
+    = link_to 'Edit Post', edit_photo_post_path(@photo_post)

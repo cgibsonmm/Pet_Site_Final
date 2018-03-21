@@ -1,6 +1,7 @@
 class PhotoPostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :crop]
+  before_action :post_owner?, only: [:edit, :update, :destroy]
 
   def index
     @posts = PhotoPost.order('created_at DESC')
@@ -39,6 +40,14 @@ class PhotoPostsController < ApplicationController
    end
 
   private
+
+  def post_owner?
+    @photo_post = PhotoPost.find(params[:id])
+    unless current_user.id == @photo_post.user_id
+      flash[:error] = 'You must own post to edit.'
+      redirect_to @photo_post
+    end
+  end
 
   def set_post
     @photo_post = PhotoPost.find(params[:id])

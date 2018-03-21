@@ -32,5 +32,16 @@ RSpec.feature 'Edit Posts' do
       expect(page).to have_content('Post Updated')
       expect(page).to have_content('this should edit my post')
     end
+
+    scenario "must own post to edit post through link" do
+      click_link 'All Posts'
+      find(:xpath, "//a[contains(@href, 'photo_posts/2')]").click
+      expect(page).not_to have_content('Edit Post')
+    end
+
+    scenario 'must own link to display edit through url' do
+      visit '/photo_posts/2/edit'
+      expect(page).to have_content('You must own post to edit.')
+    end
   end
 end
