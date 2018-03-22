@@ -1,4 +1,5 @@
 require 'rails_helper'
+# TODO: requires more validation!
 
 RSpec.feature "Creating user profile" do
 

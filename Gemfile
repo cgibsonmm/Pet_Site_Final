@@ -41,8 +41,10 @@ gem 'country_select'
 
 gem 'paperclip', '~>6.0.0'
 gem 'papercrop'
+gem 'font-awesome-rails'
 
 group :development, :test do
+  gem 'faker'
   gem 'rspec-rails', '~>3.7'
   gem 'factory_bot_rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

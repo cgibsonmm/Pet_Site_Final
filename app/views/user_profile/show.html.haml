@@ -1,3 +1,31 @@
 %h3 User Profile
 
--# TODO: need to show profile
+%h4
+  = @user.user_name
+  %table
+    %tr
+      %th First Name:
+      %td
+        = @user.user_profile.first_name
+    %tr
+      %th Last Name:
+      %td
+        = @user.user_profile.last_name
+    %tr
+      %th Zip Code:
+      %td
+        = @user.user_profile.zip_code
+    %tr
+      %th City:
+      %td
+        = @user.user_profile.city
+    %tr
+      %th State:
+      %td
+        = @user.user_profile.state
+    %tr
+      %th Country:
+      %td
+        = @user.user_profile.country
+
+= link_to 'Edit My Profile', edit_user_user_profile_path(@user, @user_profile)
