@@ -42,6 +42,7 @@ gem 'country_select'
 gem 'paperclip', '~>6.0.0'
 gem 'papercrop'
 gem 'font-awesome-rails'
+gem "auto_build"
 
 group :development, :test do
   gem 'faker'

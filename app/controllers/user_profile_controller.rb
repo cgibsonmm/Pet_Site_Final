@@ -1,4 +1,6 @@
 class UserProfileController < ApplicationController
+  before_action :authenticate_user!
+  before_action :profile_owner?
   before_action :set_user
 
   def show
@@ -21,6 +23,14 @@ class UserProfileController < ApplicationController
   end
 
   private
+
+  def profile_owner?
+    @user_profile = UserProfile.find(params[:id])
+    unless @user_profile.user_id = current_user.id
+      flash[:error] = 'This is not your profile to edit'
+      redirect_to root_path
+    end
+  end
 
   def set_user
     @user = current_user

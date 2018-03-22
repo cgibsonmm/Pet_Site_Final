@@ -27,5 +27,11 @@ RSpec.feature 'Editing User Profile' do
 
       expect(page).to have_content("Profile Updated")
     end
+
+    scenario 'User must own profile to edit it' do
+      visit 'users/2/user_profile/1/edit'
+
+      expect(page).to have_content('This is not your profile to edit')
+    end
   end
 end
