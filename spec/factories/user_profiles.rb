@@ -8,6 +8,5 @@ FactoryBot.define do
     country 'United States'
     birthday 1989
     sex 'male'
-    user
   end
 end

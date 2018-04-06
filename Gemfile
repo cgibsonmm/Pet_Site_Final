@@ -45,6 +45,7 @@ gem 'font-awesome-rails'
 gem "auto_build"
 
 group :development, :test do
+  gem 'pry'
   gem 'faker'
   gem 'rspec-rails', '~>3.7'
   gem 'factory_bot_rails'
@@ -56,7 +57,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "better_errors"
+  # gem "better_errors"
   gem "binding_of_caller"
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

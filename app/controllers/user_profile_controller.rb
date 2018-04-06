@@ -1,7 +1,17 @@
 class UserProfileController < ApplicationController
   before_action :authenticate_user!
-  before_action :profile_owner?
+  before_action :profile_owner?, except: [:new, :create]
   before_action :set_user
+
+  def new
+    @user_profile = UserProfile.new
+  end
+
+  def create
+    @user_profile = current_user.user_profile.build(default_params)
+    @user_profile.save(validate: false)
+    redirect_to 'edit'
+  end
 
   def show
     @user_profile = current_user.user_profile
