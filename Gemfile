@@ -38,6 +38,7 @@ gem 'simple_form'
 gem 'haml-rails'
 gem 'devise'
 gem 'country_select'
+gem 'cancancan'
 
 gem 'paperclip', '~>6.0.0'
 gem 'papercrop'

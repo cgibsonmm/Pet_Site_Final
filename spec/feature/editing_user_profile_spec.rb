@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Editing User Profile' do
   before do
     @user = create(:user)
-    user2 = create(:user, email: 'test@email.com', user_name: 'testueser' ,id: 2)
+    @user2 = create(:user, email: 'test@email.com', user_name: 'testueser' ,id: 2)
 
   end
 
