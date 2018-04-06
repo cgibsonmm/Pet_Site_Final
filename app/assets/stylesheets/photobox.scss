@@ -15,7 +15,7 @@
 }
 
 .grid li{
-  height:350px;
+  height:250px;
   padding: 20px;
   background-clip: content-box;
   background-size: cover;
@@ -24,11 +24,11 @@
 }
 
 .grid li.small{
-  flex-basis: 30%;
+  flex-basis: 40%;
 }
 
 .grid li.large{
-  flex-basis: 70%;
+  flex-basis: 60%;
 }
 
 @media (max-width:1100px) {

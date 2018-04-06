@@ -7,9 +7,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .container
+    .container-fluid
       = render 'parts/navbar'
       = render 'parts/flash'
       %section
-        -# = render 'parts/photobox'
+        -if controller_name == 'home'
+          = render 'parts/photobox'
         = yield

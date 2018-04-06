@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Ubuntu');
+@import "bootstrap";
 @import "jquery.jcrop";
 
 
@@ -20,8 +21,9 @@ body{
   background-color: $gray;
 }
 
-.container{
-  min-height: 100%;
+.container-fluid{
+  min-height: 100vh;
+  padding: 0;
 }
 
 a{
@@ -31,6 +33,10 @@ a{
 
 h1, h2, h3, h4, h5, h6{
   font-family: 'Ubuntu', sans-serif;
+}
+
+h3:hover  a:hover{
+  text-decoration: none;
 }
 
 li{

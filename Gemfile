@@ -42,6 +42,8 @@ gem 'country_select'
 gem 'paperclip', '~>6.0.0'
 gem 'papercrop'
 
+gem 'bootstrap', '~> 4.0.0'
+
 group :development, :test do
   gem 'rspec-rails', '~>3.7'
   gem 'factory_bot_rails'
