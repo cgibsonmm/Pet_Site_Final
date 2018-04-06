@@ -1,11 +1,17 @@
 .navbar
   %h3
     = link_to 'ApetsLyfe', root_path, class: 'nav-header underline'
-  .links
+  %button#drop-me.btn.btn-error
+    Burger goes here
+  .links.dropdown
     = link_to 'New Post', new_photo_post_path
+    %li
+      %i.fas.fa-circle
     = link_to 'All Posts', photo_posts_path
+    %li
+      %i.fas.fa-circle
     = link_to 'My Animals'
-  .nav
+  .nav.dropdown
     - if user_signed_in?
       %li
         = link_to 'Sign Out', destroy_user_session_path, method: :delete

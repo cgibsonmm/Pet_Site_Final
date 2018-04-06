@@ -43,6 +43,7 @@ gem 'paperclip', '~>6.0.0'
 gem 'papercrop'
 
 gem 'bootstrap', '~> 4.0.0'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~>3.7'

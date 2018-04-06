@@ -6,9 +6,15 @@
   padding-bottom: 20px;
   border-bottom: 1px solid rgb(213, 213, 213);
   background-color: $light_blue;
+  font-weight: 800;
   .nav-header{
     font-size: 24px;
     color: black;
+  }
+
+  #drop-me{
+    display: none;
+    text-align: center;
   }
 
   .links{
@@ -16,8 +22,13 @@
     align-items: center;
     justify-content: space-around;
 
+    i{
+      padding: 20px;
+    }
+
     a{
       padding: 0 8px;
+      color: rgb(54, 9, 9);
     }
   }
 
@@ -40,12 +51,28 @@
   .navbar{
     flex-direction: column;
     text-align: center;
+    position: absolute;
+    width:100%;
+    height: 70px;
     h3{
       padding-bottom: 10px;
+      position: absolute;
+      left: 0;
+    }
+    #drop-me{
+      display: inline-block;
+      align-self: flex-end;
+    }
+    .dropdown{
+      display: none;
     }
     .links{
       width: auto;
       flex-direction: column;
+
+      i{
+        display: none;
+      }
       a:nth-last-child(1){
         border-bottom: 1px solid black;
         padding-bottom: 10px;
