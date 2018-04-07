@@ -17,7 +17,7 @@ RSpec.feature 'Showing User Profile' do
       click_link 'My Profile'
 
       expect(page).to have_content(@user_profile.user.user_name)
-      # TODO: having issues with profile being displayed 
+      # TODO: having issues with profile being displayed
     end
   end
 end

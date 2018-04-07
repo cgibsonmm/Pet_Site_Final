@@ -1,6 +1,8 @@
+require 'pry'
+
 class UserProfileController < ApplicationController
   # TODO: NOT VALIDATING RIGHT!!!!!
-  
+
   before_action :authenticate_user!
   before_action :profile_owner?, except: [:new, :create]
   before_action :set_user
@@ -37,8 +39,9 @@ class UserProfileController < ApplicationController
   private
 
   def profile_owner?
-    @user_profile = User
-    if
+    @profile = UserProfile.find(params[:id])
+    # binding pry
+    if @profile.user_id != current_user.id
       flash[:error] = 'This is not your profile to edit'
       redirect_to root_path
     end

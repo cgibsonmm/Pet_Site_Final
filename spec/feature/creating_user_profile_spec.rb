@@ -5,7 +5,7 @@ RSpec.feature 'Creating user profile' do
   before do
     user = create(:user)
     sign_in_with user
-    visit 'users/1/user_profile/1/edit'
+    visit 'user_profile/1/edit'
   end
 
   context 'Valid user' do

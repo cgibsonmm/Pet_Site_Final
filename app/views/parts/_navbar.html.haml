@@ -15,7 +15,7 @@
           %i{class:"fa fa-caret-down"}
 
         .dropdown_content#nav_dropdown
-          -# = link_to "My Profile", user_user_profile_path(current_user, current_user.user_profile)
+          = link_to 'My Profile', user_profile_path(current_user)
           = link_to 'Nothing YEt'
     - else
       %li
