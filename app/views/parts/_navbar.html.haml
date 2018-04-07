@@ -15,6 +15,14 @@
     - if user_signed_in?
       %li
         = link_to 'Sign Out', destroy_user_session_path, method: :delete
+      %li.dropdown
+        %button.dropbtn
+          My Account
+          %i{class:"fa fa-caret-down"}
+
+        .dropdown_content#nav_dropdown
+          = link_to 'My Profile', user_profile_path(current_user)
+          = link_to 'Nothing YEt'
     - else
       %li
         = link_to 'Sign In', new_user_session_path, class: 'underline'

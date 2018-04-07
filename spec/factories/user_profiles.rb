@@ -1,13 +1,13 @@
 FactoryBot.define do
   factory :user_profile do
-    id 1
-    first_name nil
-    last_name nil
-    zip_code nil
-    city nil
-    state nil
-    country nil
-    birthday nil
-    sex nil
+    first_name 'default'
+    last_name 'default'
+    zip_code 11111
+    city 'Brooklyn'
+    state 'Ny'
+    country 'United States'
+    birthday 1989
+    sex 'male'
+    user
   end
 end

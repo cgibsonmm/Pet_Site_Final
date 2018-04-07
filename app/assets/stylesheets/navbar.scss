@@ -10,6 +10,7 @@
   .nav-header{
     font-size: 24px;
     color: black;
+    padding: 0 20px;
   }
 
   #drop-me{
@@ -35,16 +36,49 @@
   .nav{
     display: flex;
     align-items: center;
-    padding: 10px;
+    flex-direction: row;
 
     li{
       list-style: none;
+      padding-right: 10px;
+    }
+
+    li.dropdown .dropbtn{
+      cursor: pointer;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: black;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .dropdown_content{
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
 
       a{
-        padding: 0 10px;
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
       }
     }
   }
+}
+
+.not_active{
+  display: none;
+}
+
+.active {
+  display: block;
 }
 
 @media (max-width:800px) {

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :users do
-    resources :user_profile
+    resources :user_profile, shallow: true
   end
 
   resources :photo_posts do
