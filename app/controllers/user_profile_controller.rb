@@ -1,8 +1,4 @@
-require 'pry'
-
 class UserProfileController < ApplicationController
-  # TODO: NOT VALIDATING RIGHT!!!!!
-
   before_action :authenticate_user!
   before_action :profile_owner?, except: [:new, :create]
   before_action :set_user
