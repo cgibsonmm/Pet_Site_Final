@@ -26,7 +26,6 @@ class User < ApplicationRecord
       city:         'default',
       state:        'NA',
       country:      'default',
-      country:      'default',
       zip_code:     11111,
       sex:          'default'
     }
