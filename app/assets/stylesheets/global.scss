@@ -1,17 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,800|Ubuntu:400,700');
-@import "bootstrap";
-@import "font-awesome";
-@import "jquery.jcrop";
-@import "font-awesome";
-
-
-
-
-$deep_blue: #558C89;
-$light_blue: #74AFAD;
-$orange: #D9853B;
-$gray: #ECECEA;
-
 *{
   padding: 0;
   margin: 0;
@@ -78,5 +64,3 @@ section {
     margin: 0;
   }
 }
-
-@import "./*";

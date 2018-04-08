@@ -1,6 +1,6 @@
 class UserProfileController < ApplicationController
   before_action :authenticate_user!
-  before_action :profile_owner?, except: [:new, :create]
+  before_action :profile_owner?, except: %i[new create]
   before_action :set_user
 
   def new
@@ -24,10 +24,10 @@ class UserProfileController < ApplicationController
   def update
     @user_profile = current_user.user_profile
     if @user_profile.update(profile_params)
-      flash[:success] = "Profile Updated"
+      flash[:success] = 'Profile Updated'
       redirect_to root_path
     else
-      flash[:error] = "Error, updating profile"
+      flash[:error] = 'Error, updating profile'
       render 'edit'
     end
   end
@@ -35,12 +35,7 @@ class UserProfileController < ApplicationController
   private
 
   def profile_owner?
-    @profile = UserProfile.find(params[:id])
-    # binding pry
-    if @profile.user_id != current_user.id
-      flash[:error] = 'This is not your profile to edit'
-      redirect_to root_path
-    end
+    @profile = current_user.user_profile
   end
 
   def set_user

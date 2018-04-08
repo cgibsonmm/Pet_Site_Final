@@ -31,8 +31,8 @@ RSpec.feature 'Editing User Profile' do
     scenario 'User must own profile to edit it' do
       visit 'user_profile/2/edit'
 
-      expect(page).to have_content('This is not your profile to edit')
-      expect(page).to have_content('A community')
+      expect(page).not_to have_content(@user2.user_name)
+      expect(page).to have_content(@user.user_name)
     end
   end
 end
