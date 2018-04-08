@@ -1,15 +1,16 @@
+-# TODO: Need a haml linter
 .navbar
   %h3
     = link_to 'ApetsLyfe', root_path, class: 'nav-header underline'
-  %button#drop-me.btn.btn-error
-    Burger goes here
+  %button#drop-me
+    %i{class:"fas fa-bars"}
   .links.dropdown
     = link_to 'New Post', new_photo_post_path
     %li
-      %i.fas.fa-paw
+      %i{class:"fas fa-paw"}
     = link_to 'All Posts', photo_posts_path
     %li
-      %i.fas.fa-paw
+      %i{class:"fas fa-paw"}
     = link_to 'My Animals'
   .nav.dropdown
     - if user_signed_in?

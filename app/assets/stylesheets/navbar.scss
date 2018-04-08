@@ -5,7 +5,7 @@
   padding: 15px 30px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgb(213, 213, 213);
-  background-color: $light_blue;
+  background-color: rgb(122, 122, 122);
   font-weight: 800;
   .nav-header{
     font-size: 24px;
@@ -30,6 +30,7 @@
     a{
       padding: 0 8px;
       color: rgb(54, 9, 9);
+      font-weight: 400;
     }
   }
 
@@ -41,6 +42,7 @@
     li{
       list-style: none;
       padding-right: 10px;
+      font-weight: 400;
     }
 
     li.dropdown .dropbtn{
