@@ -6,8 +6,10 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      flash[:success] = 'Comment created'
-      redirect_back(fallback_location: root_path)
+      respond_to do |format|
+        format.html { redirect_to photo_posts_path }
+        format.js
+      end
     else
       flash[:error] = 'Cannot add comment.'
       rediect_to @photo_post

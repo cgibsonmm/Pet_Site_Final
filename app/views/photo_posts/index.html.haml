@@ -1,6 +1,6 @@
 .image_grid
   - @posts.each do |post|
-    .image_box
+    .card
       .user_name
         = post.user.user_name
       .pet_photo
@@ -9,7 +9,5 @@
         = post.caption
       .comment_section
         - if post.comments
-          = render 'comments/comment', post: post 
-        = form_for [post, post.comments.build] do |f|
-          = f.text_field :content, placeholder: 'Add Comment'
-          = f.button 'Submit'
+          = render 'comments/comment', post: post
+        = render 'comments/form', post: post, user: current_user
