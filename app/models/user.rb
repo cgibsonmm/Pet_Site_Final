@@ -5,19 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :user_profile, dependent: :destroy
+  has_many :comments
+
   after_create :build_user_profile
 
   has_many :photo_posts, dependent: :destroy
 
-  validates :user_name, presence: true, length: {in: 5..12}
+  validates :user_name, presence: true, length: { in: 5..12 }
 
   private
-
-  def create_user_profile
-
-
-    # @profile = create_user_profile!(default_params)
-  end
 
   def build_user_profile
     default_params = {
@@ -26,9 +22,9 @@ class User < ApplicationRecord
       city:         'default',
       state:        'NA',
       country:      'default',
-      zip_code:     11111,
+      zip_code:     11_111,
       sex:          'default'
     }
-    @profile = self.create_user_profile!(default_params)
+    @profile = create_user_profile!(default_params)
   end
 end

@@ -19,6 +19,7 @@ RSpec.feature 'Adding comments to photo_posts' do
       fill_in 'Add Comment', with: 'This photo is great!'
       click_button 'Submit'
 
+      expect(page).to have_content('Comment created')
       expect(page).to have_content('This photo is great!')
     end
   end

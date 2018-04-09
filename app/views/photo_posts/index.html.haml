@@ -8,3 +8,8 @@
       .caption
         = post.caption
       .comment_section
+        - if post.comments
+          = render 'comments/comment', post: post 
+        = form_for [post, post.comments.build] do |f|
+          = f.text_field :content, placeholder: 'Add Comment'
+          = f.button 'Submit'
