@@ -3,14 +3,14 @@
   %h3
     = link_to 'ApetsLyfe', root_path, class: 'nav-header underline'
   %button#drop-me
-    %i{class:"fas fa-bars"}
+    %i{class:"fa fa-bars"}
   .links.dropdown
     = link_to 'New Post', new_photo_post_path
     %li
-      %i{class:"fas fa-paw"}
+      %i{class:"fa fa-paw"}
     = link_to 'All Posts', photo_posts_path
     %li
-      %i{class:"fas fa-paw"}
+      %i{class:"fa fa-paw"}
     = link_to 'My Animals'
   .nav.dropdown
     - if user_signed_in?

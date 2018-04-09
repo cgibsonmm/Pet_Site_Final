@@ -7,6 +7,7 @@
         = link_to image_tag(post.image.url(:medium)), photo_post_path(post)
       .caption
         = post.caption
+        %i{class: 'fa fa-heart'}
       .comment_section
         - if post.comments
           = render 'comments/comment', post: post

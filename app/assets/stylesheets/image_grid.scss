@@ -1,0 +1,52 @@
+.image_grid{
+  height:100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+
+  .card{
+    padding:10px;
+    margin:10px;
+
+    .user_name{
+      color: rgb(66, 113, 144);
+      font-weight: 700;
+      align-self: flex-start;
+    }
+
+    .caption{
+      padding-top: 3px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      i{
+        
+      }
+    }
+
+    .comment{
+      display: flex;
+      .user_name{
+        font-weight: 500;
+        padding: 0 5px 3px 0;
+      }
+    }
+
+    .pet_photo a img{
+      min-width: 150px;
+      max-width: 250px;
+      min-height: 150px;
+      max-height: 250px;
+    }
+  }
+}
+
+@media (max-width: 800px){
+  .image_grid{
+  }
+  .pet_photo a img{
+    flex-basis: 20%;
+  }
+}
