@@ -1,14 +1,15 @@
-.image_grid
-  - @posts.each do |post|
-    .card
-      .user_name
-        = post.user.user_name
-      .pet_photo
-        = link_to image_tag(post.image.url(:medium)), photo_post_path(post)
-      .caption
-        = post.caption
-        %i{class: 'fa fa-heart'}
-      .comment_section
-        - if post.comments
-          = render 'comments/comment', post: post
-        = render 'comments/form', post: post, user: current_user
+.row
+  %ul.image-grid.square
+    - @posts.each do |post|
+      %li.image.box.overlay.gray{'style': "background-image:url(#{post.image.url(:medium)})"}
+        %ul.image-info
+          %li.hidden-username
+            %h4
+              = post.user.user_name
+          %li
+            = link_to photo_post_path(post) do
+              %i.fa.fa-search.fa-2x
+
+          %li
+            %i.fa.fa-heart.fa-2x.heart
+            %h5.heart 300

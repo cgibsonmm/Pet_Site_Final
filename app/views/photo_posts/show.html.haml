@@ -1,10 +1,14 @@
 %h2 View Post
+.card
+  = image_tag @photo_post.image.url(:medium)
+  .user-caption
+    = @photo_post.user.user_name
+    = @photo_post.caption
+  .comments
+    - if @photo_post.comments
+      = render 'comments/comment', post: @photo_post
+    = render 'comments/form', post: @photo_post, user: current_user
 
-.user_name
-  = @photo_post.user.user_name
-= image_tag @photo_post.image.url(:medium)
-= @photo_post.caption
-
-.links
-  - if @photo_post.user_id == current_user.id
-    = link_to 'Edit Post', edit_photo_post_path(@photo_post)
+  .links
+    - if @photo_post.user_id == current_user.id
+      = link_to 'Edit Post', edit_photo_post_path(@photo_post)

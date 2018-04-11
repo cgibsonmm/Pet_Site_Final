@@ -1,53 +1,105 @@
-.image_grid{
-  height:100vh;
+.image-grid {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  li,
+  ul {
+    list-style: none;
+  }
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
+  align-content: flex-start;
+  border: 1px solid black;
 
-  .card{
-    padding:10px;
-    margin:10px;
+  li.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 25%;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+    padding: 1px;
+    max-height: 250px;
+    min-height: 250px;
 
-    .user_name{
-      color: rgb(66, 113, 144);
-      font-weight: 700;
-      align-self: flex-start;
-    }
-
-    .caption{
-      padding-top: 3px;
+    ul.image-info {
       display: flex;
+      flex-direction: column;
       justify-content: space-around;
       align-items: center;
-    }
+      height: 100%;
+      width: 100%;
+      opacity: 0;
 
-    .comment{
-      display: flex;
-      .user_name{
-        font-weight: 500;
-        padding: 0 5px 3px 0;
+      &:hover {
+        opacity: 1;
       }
 
-      button{
-        
+      .hidden-username{
+        color: #429ADF;
+        padding:3px 0 0 3px;
       }
-    }
-
-    .pet_photo a img{
-      min-width: 150px;
-      max-width: 250px;
-      min-height: 150px;
-      max-height: 250px;
     }
   }
 }
 
-@media (max-width: 800px){
-  .image_grid{
+.overlay {
+  position: relative;
+}
+
+.overlay:before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 0;
+}
+
+.overlay:hover:before {
+  display: block;
+}
+
+.gray:before {
+  background-color: rgba(191, 191, 191, 0.7);
+}
+
+.box * {
+  position: relative;
+}
+
+.heart{
+  color: rgb(205, 4, 16);
+}
+@media (max-width:1000px) {
+  ul.image-grid li.image.box.overlay {
+    flex-basis: 30%;
+    flex-grow: 1;
+    min-height: 200px;
   }
-  .pet_photo a img{
-    flex-basis: 20%;
+
+  ul.image-info{
+    border: 4px solid red;
+    display: flex;
+    height:100%;
+  }
+}
+@media (max-width:500px) {
+  .image-grid {
+    height: 100vh;
+  }
+
+  .image-grid li.image {
+    flex-basis: 50%;
+    min-height: 120px;
+    max-height: 120px;
   }
 }
