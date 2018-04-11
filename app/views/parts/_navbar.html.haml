@@ -1,31 +1,50 @@
--# TODO: Need a haml linter
-.navbar
-  %h3
-    = link_to 'ApetsLyfe', root_path, class: 'nav-header underline'
-  %button#drop-me
-    %i{class:"fa fa-bars"}
-  .links.dropdown
-    = link_to 'New Post', new_photo_post_path
-    %li
-      %i{class:"fa fa-paw"}
-    = link_to 'All Posts', photo_posts_path
-    %li
-      %i{class:"fa fa-paw"}
-    = link_to 'My Animals'
-  .nav.dropdown
-    - if user_signed_in?
-      %li
-        = link_to 'Sign Out', destroy_user_session_path, method: :delete
-      %li.dropdown
-        %button.dropbtn
-          My Account
-          %i{class:"fa fa-caret-down"}
+%nav.navbar.navbar-expand-md.navbar-light.bg-light
+  -# = link_to 'APetsLyfe', root_path,class: 'navbar-brand', id: 'brandName'
+  = link_to root_path, class: 'navbar-brand', id: 'brandName' do
+    APetsLyfe
+    %i{class: 'fa fa-paw', 'data-fa-transform': "shrink-4 up-.5 rotate-45", 'data-fa-mask': "fas fa-circle"}
+  %button.navbar-toggler{type: 'button', 'data-toggle': 'collapse', 'data-target': "#navContent", 'aria-controls': "navContent", 'aria-expanded': "false", 'aria-label': "Toggle navigation"}
+    %span.navbar-toggler-icon
 
-        .dropdown_content#nav_dropdown
-          = link_to 'My Profile', user_profile_path(current_user)
-          = link_to 'Nothing YEt'
+  -# Nav Links
+  .collapse.navbar-collapse#navContent
+    %ul.navbar-nav.mr-auto.ml-auto
+      %li.nav-item
+        = link_to 'New Post', new_photo_post_path, class: 'nav-link'
+      %li.nav-item.paw
+        %i{class: 'fa fa-paw', 'data-fa-transform': "shrink-4 up-.5 rotate--45", 'data-fa-mask': "fas fa-circle"}
+      %li.nav-item
+        = link_to 'All Posts', photo_posts_path, class: 'nav-link'
+      %li.nav-item.paw
+        %i{class: 'fa fa-paw', 'data-fa-transform': "shrink-4 up-.5 rotate--45", 'data-fa-mask': "fas fa-circle"}
+      %li.nav-item
+        = link_to 'My Pets', '#', class: 'nav-link'
+      %li.nav-item.paw
+        %i{class: 'fa fa-paw', 'data-fa-transform': "shrink-4 up-.5 rotate-45", 'data-fa-mask': "fas fa-circle"}
+      -# Services dropdown
+      %li.nav-item.dropdown
+        %a.nav-link.dropdown-toggle#navbar-dropdown{href: '#', 'role': 'button', 'data-toggle': 'dropdown'}
+          Services
+        .dropdown-menu
+          %a.dropdown-item{href: '#'}
+            Find A Pet
+          %a.dropdown-item{href: '#'}
+            Closest Park
+          %a.dropdown-item{href: '#'}
+            Animal Clinic
+            %i{class:'fa fa-syringe'}
+    - if user_signed_in?
+      %ul.navbar-nav.user-area
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle#account-dropdown{href: '#', 'role': 'button', 'data-toggle': 'dropdown'}
+            My Account
+          .dropdown-menu
+            = link_to 'My Profile', user_profile_path(current_user), class: 'dropdown-item'
+        %li.nav-item
+          = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
     - else
-      %li
-        = link_to 'Sign In', new_user_session_path, class: 'underline'
-      %li
-        = link_to 'Sign Up', new_user_registration_path, class: 'underline'
+      %ul.navbar-nav.user-area
+        %li.nav-item
+          = link_to 'Sign In', new_user_session_path, class: 'nav-link'
+        %li.nav-item
+          = link_to 'Sign Up', new_user_registration_path, class: 'nav-link'

@@ -13,7 +13,7 @@ RSpec.feature 'Editing User Profile' do
     end
 
     scenario 'can edit their profile' do
-      click_button 'My Account'
+      click_link 'My Account'
       click_link 'My Profile'
       click_link 'Edit My Profile'
 

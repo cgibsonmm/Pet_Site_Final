@@ -13,7 +13,7 @@ RSpec.feature 'Showing User Profile' do
     end
 
     scenario 'can view their own profile' do
-      click_button 'My Account'
+      click_link 'My Account'
       click_link 'My Profile'
 
       expect(page).to have_content(@user_profile.user.user_name)
