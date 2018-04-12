@@ -11,6 +11,6 @@
       = render 'parts/navbar'
       = render 'parts/flash'
       %section
-        -if controller_name == 'home'
+        -if controller_name == 'home' && @post.length > 1
           = render 'parts/photobox'
         = yield
