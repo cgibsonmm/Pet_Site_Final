@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Mogra|Abril+Fatface');
 
 #brandName{
-  font-family: 'Abril Fatface';
+  font-family: 'Lato';
+  font-weight: 700;
   font-size:2em;
   color:#039BE5;
 }
 
 .nav-link, .dropdown-item{
   font-family: 'Lato';
-  font-style:italic;
+  font-style: italic;
   font-weight:400;
 }
 
@@ -22,7 +23,7 @@
   font-weight:600;
 }
 
-@media (max-width:765px){
+@media (max-width:1000px){
   .paw{
     display:none;
   }
