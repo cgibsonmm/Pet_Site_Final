@@ -1,3 +1,29 @@
 // Place all the styles related to the PhotoPosts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.image-comment{
+  display: flex;
+  padding: 2px;
+
+  .user_name{
+    padding-left: 15px;
+    font-weight: bold;
+    color:rgb(28, 71, 106);
+    text-decoration: underline;
+  }
+
+  .comment-comment_content{
+    padding-left: 20px;
+    align-self: center;
+  }
+
+  &:nth-child(even){
+    background-color: rgb(236, 236, 236);
+  }
+}
+
+.new_comment{
+  padding-top: 4px;
+}
