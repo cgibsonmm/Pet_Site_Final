@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :user_profile, shallow: true
+    resources :animals, shallow: true
   end
 
   resources :photo_posts do

@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :user_profile, dependent: :destroy
   has_many :comments
+  has_many :animals
 
   after_create :build_user_profile
 
