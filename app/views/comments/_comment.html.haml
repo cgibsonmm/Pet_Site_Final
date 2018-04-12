@@ -1,6 +1,4 @@
-.comments{id: "comments_#{post.id}"}
-  - post.comments.each_with_index do |comment, index|
-    .comment
-      .user_name
-        = comment.user.user_name
-      = comment.content
+.user_name
+  = comment.user.user_name
+.comment-comment_content
+  = comment.content

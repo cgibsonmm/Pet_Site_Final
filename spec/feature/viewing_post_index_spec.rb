@@ -17,7 +17,7 @@ RSpec.feature 'Photo_Post Index' do
   context 'not user session' do
     scenario 'can view the index page' do
       visit photo_posts_path
-      expect(page).to have_content('MyString')
+      expect(page).to have_css(".image.box")
     end
   end
 end

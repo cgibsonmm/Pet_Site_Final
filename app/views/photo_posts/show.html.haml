@@ -4,10 +4,10 @@
   .user-caption
     = @photo_post.user.user_name
     = @photo_post.caption
-  .comments
+  .comments{id: "comments_#{@photo_post.id}"}
     - if @photo_post.comments
-      = render 'comments/comment', post: @photo_post
-    = render 'comments/form', post: @photo_post, user: current_user
+      = render @photo_post.comments, post: @photo_post
+  = render 'comments/form', post: @photo_post, user: current_user
 
   .links
     - if @photo_post.user_id == current_user.id
