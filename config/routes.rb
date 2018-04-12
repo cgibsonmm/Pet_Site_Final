@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'find_a_pet/index'
+
   devise_for :users, controllers: { registrations: 'registrations' }
   get 'home/index'
+
+  get 'find_a_pet/index'
 
   root 'home#index'
 

@@ -26,8 +26,7 @@
         %a.nav-link.dropdown-toggle#navbar-dropdown{href: '#', 'role': 'button', 'data-toggle': 'dropdown'}
           Services
         .dropdown-menu
-          %a.dropdown-item{href: '#'}
-            Find A Pet
+          = link_to 'Adopt A Pet', find_a_pet_index_path, class: 'dropdown-item'
           %a.dropdown-item{href: '#'}
             Closest Park
           %a.dropdown-item{href: '#'}
