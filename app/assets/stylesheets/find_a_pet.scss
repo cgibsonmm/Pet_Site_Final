@@ -1,3 +1,25 @@
-// Place all the styles related to the find_a_pet controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#petsList{
+  display: flex;
+  flex-wrap:wrap;
+  width:100vw;
+
+  .pet_card{
+    width:20%;
+    height:300px;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+  }
+  .popover{
+    display: none;
+  }
+}
+
+@media(max-width:1000px){
+  #petsList{
+
+    .pet_card{
+      width: 50%;
+    }
+  }
+}

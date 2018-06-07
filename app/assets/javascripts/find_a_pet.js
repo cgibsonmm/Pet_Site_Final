@@ -3,7 +3,7 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$(document).ready(function(){
+document.addEventListener('turbolinks:load', function(){
   // Zip code input
   var zipInput = document.getElementById('zipInput')
   var speciesType = document.getElementById('speciesType')
@@ -28,10 +28,27 @@ $(document).ready(function(){
       returnedPets.forEach(function(pet){
         var petName = Object.values(pet.name)
         var petImage =  (Object.values(pet.media.photos.photo[2])[1])
+        var petInfo = Object.values(pet.description)
+        var strInfo = JSON.stringify(petInfo).substr(0,100)
+        var petBreed = Object.values(pet.breeds.breed)
 
+        //Need to ask stack overflow about this.
+        // function parseBreeds(breeds, name){
+        //   var div = '.' + name + '_breeds'
+        //   if (breeds.length > 1){
+        //     for(i = 0; i < breeds.length; i++){
+        //       console.log(breeds[i])
+        //     }
+        //   }
+        //   else{
+        //     return $(div).append(Object.values(breeds[0]))
+        //   }
+        // }
+
+// TODO: Need to finish hiding and showing popover
         $('#petsList').append(
-          "<li class='pet'>" + petName + "</li>",
-          '<img src='+ petImage + '>'
+          '<li class="pet_card" style="background-image: url('+ petImage +')">'+
+          '<li class="popover is-hidden">hello</li'
         )
       })
     })
