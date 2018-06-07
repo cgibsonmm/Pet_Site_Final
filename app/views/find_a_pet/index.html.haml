@@ -1,1 +1,11 @@
-Random pet
+%h2 Pet Finder
+%p
+  Enter your zip code to search local pets
+%form
+  %input#zipInput{type: 'text'}
+
+  =select_tag 'species',options_for_select(['dog', 'cat']), id:'speciesType'
+
+%button#search_button Click me
+.returned_pets
+  %ul#petsList
