@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature 'Adding new user' do
   before do
     visit '/'
-    click_link 'Sign Up'
+    click_link 'sign_up_nav'
   end
 
   scenario 'Can successfully create a new user' do
