@@ -1,31 +1,11 @@
-- if @post.length > 0
-  = render 'parts/photobox'
-
-
-%h1 Listing animals
-
-%table
-  %thead
-    %tr
-      %th Name
-      %th User
-      %th Dob
-      %th Species
-      %th
-      %th
-      %th
-
-  %tbody
-    - @animals.each do |animal|
-      %tr
-        %td= animal.name
-        %td= animal.user.user_name
-        %td= animal.dob
-        %td= animal.species
-        %td= link_to 'Show', animal
-        %td= link_to 'Edit', edit_animal_path(animal)
-        %td= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Animal', new_user_animal_path
+.pet_cards.mt-3
+  .nav.nav-tabs
+    - @animals.each_with_index do |pet, i|
+      .nav-item.nav-link.pet{'href': '#', class: "pet-#{i}"}
+        = pet.name
+    .nav-item.nav-link
+      = link_to 'Add new Pet', new_user_animal_path(@user)
+  .tab-content
+    - @animals.each_with_index do |pet, i|
+      .col-lg-8.pet-card{ class: "card-#{i}"}
+        %h3.pet-name.pt-2= pet.name
