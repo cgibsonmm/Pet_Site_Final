@@ -1,41 +1,41 @@
-section .devise_form{
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width:50%;
-  border-radius: 8px;
-  background-color: $deep_blue;
-  height:400px;
-  font-size: 1.2em;
-
-  h2{
-    margin-top: 10px;
-  }
-
-  hr{
-    margin-bottom: 20px;
-  }
-
-  .form-inputs{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-    .input{
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 5px;
-    }
-
-    input{
-      border-radius: 4px;
-      line-height: 2.8;
-      margin-left: 5px;
-      background-color: rgb(233, 235, 234);
-    }
-  }
-}
+// section .devise_form{
+//   display:flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   align-items: center;
+//   width:50%;
+//   border-radius: 8px;
+//   background-color: $deep_blue;
+//   height:400px;
+//   font-size: 1.2em;
+//
+//   h2{
+//     margin-top: 10px;
+//   }
+//
+//   hr{
+//     margin-bottom: 20px;
+//   }
+//
+//   .form-inputs{
+//     width:100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-start;
+//
+//     .input{
+//       width: 100%;
+//       display: flex;
+//       justify-content: space-between;
+//       padding-bottom: 5px;
+//     }
+//
+//     input{
+//       border-radius: 4px;
+//       line-height: 2.8;
+//       margin-left: 5px;
+//       background-color: rgb(233, 235, 234);
+//     }
+//   }
+// }
