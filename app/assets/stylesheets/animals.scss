@@ -1,3 +1,22 @@
-// Place all the styles related to the Animals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.hidden {
+  display: none;
+}
+
+.pet_cards {
+  background-color: white;
+
+  .nav-tabs{
+    font-size: 1.1em;
+    width: 100vw;
+  }
+
+  .pet-name{
+    text-decoration: underline;
+  }
+
+  .pet_image{
+  }
+
+  div *{
+  }
+}
