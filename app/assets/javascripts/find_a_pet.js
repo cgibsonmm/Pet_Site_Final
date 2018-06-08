@@ -26,10 +26,11 @@ document.addEventListener('turbolinks:load', function(){
     .done(function(data){
       var returnedPets = data.petfinder.pets.pet
       returnedPets.forEach(function(pet){
+        console.log(pet)
         var petName = Object.values(pet.name)
         var petImage =  (Object.values(pet.media.photos.photo[2])[1])
         var petInfo = Object.values(pet.description)
-        var strInfo = JSON.stringify(petInfo).substr(0,100)
+        var strInfo = JSON.stringify(petInfo)
         var petBreed = Object.values(pet.breeds.breed)
 
         //Need to ask stack overflow about this.
@@ -48,7 +49,7 @@ document.addEventListener('turbolinks:load', function(){
 // TODO: Need to finish hiding and showing popover
         $('#petsList').append(
           '<li class="pet_card" style="background-image: url('+ petImage +')">'+
-          '<li class="popover is-hidden">hello</li'
+          '<li class="">'+ strInfo +'</li'
         )
       })
     })
