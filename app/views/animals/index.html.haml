@@ -9,3 +9,7 @@
     - @animals.each_with_index do |pet, i|
       .col-lg-8.pet-card{ class: "card-#{i}"}
         %h3.pet-name.pt-2= pet.name
+        = image_tag pet.image.url(:medium)
+        %p= "age: #{animal_age(pet.dob)} old"
+        %p= "Birthday: #{pet.dob.strftime('%m/%d/%Y')}"
+        = link_to 'Edit', edit_animal_path(pet)
