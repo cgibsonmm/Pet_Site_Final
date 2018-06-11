@@ -25,4 +25,6 @@
 
 # Ignore public system photos
 /public/system/**
-./spec/examples.txt
+
+#ignore
+/spec/examples.txt
