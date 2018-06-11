@@ -1,8 +1,8 @@
 %h1 Editing animal
+.card.pet_card
+  = render 'edit_form'
 
-= render 'edit_form'
-
-= link_to 'Show', @animal
-\|
-= link_to 'Back', user_animals_path(current_user)
-= link_to 'Delete', animal_path(@animal), method: :delete, data:{confirm: 'Are you sure you want to delete this animal?'}
+  = link_to 'Show', @animal
+  \|
+  = link_to 'Back', user_animals_path(current_user)
+  = link_to 'Delete', animal_path(@animal), method: :delete, data:{confirm: 'Are you sure you want to delete this animal?'}

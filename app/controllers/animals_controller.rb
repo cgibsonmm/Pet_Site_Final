@@ -12,8 +12,7 @@ class AnimalsController < ApplicationController
 
   # GET /animals/1
   # GET /animals/1.json
-  def show
-  end
+  def show; end
 
   # GET /animals/new
   def new
@@ -21,8 +20,7 @@ class AnimalsController < ApplicationController
   end
 
   # GET /animals/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /animals
   # POST /animals.json
@@ -31,8 +29,8 @@ class AnimalsController < ApplicationController
 
     respond_to do |format|
       if @animal.save
-        format.html { redirect_to @animal, notice: 'Animal was successfully created.' }
-        format.json { render :show, status: :created, location: @animal }
+        format.html { redirect_to user_animals_path(@user), notice: 'Animal was successfully created.' }
+        format.json { render :index, status: :created, location: @animal }
       else
         format.html { render :new }
         format.json { render json: @animal.errors, status: :unprocessable_entity }
@@ -45,8 +43,8 @@ class AnimalsController < ApplicationController
   def update
     respond_to do |format|
       if @animal.update(animal_params)
-        format.html { redirect_to @animal, notice: 'Animal was successfully updated.' }
-        format.json { render :show, status: :ok, location: @animal }
+        format.html { redirect_to user_animals_url(@user), notice: 'Animal was successfully updated.' }
+        format.json { render :index, status: :ok, location: @animal }
       else
         format.html { render :edit }
         format.json { render json: @animal.errors, status: :unprocessable_entity }
@@ -64,23 +62,27 @@ class AnimalsController < ApplicationController
     end
   end
 
+  def crop
+    render 'crop'
+  end
+
   private
 
-    def set_posts
-      @post = PhotoPost.all
-    end
+  def set_posts
+    @post = PhotoPost.all
+  end
 
-    def set_user
-      @user = current_user
-    end
+  def set_user
+    @user = current_user
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_animal
-      @animal = Animal.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_animal
+    @animal = Animal.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def animal_params
-      params.require(:animal).permit(:image, :name, :user_id, :dob, :species, :medical_history)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def animal_params
+    params.require(:animal).permit(:image, :name, :user_id, :dob, :species, :medical_history)
+  end
 end

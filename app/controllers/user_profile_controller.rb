@@ -25,7 +25,7 @@ class UserProfileController < ApplicationController
     @user_profile = current_user.user_profile
     if @user_profile.update(profile_params)
       flash[:success] = 'Profile Updated'
-      redirect_to root_path
+      redirect_to user_animals_path(current_user)
     else
       flash[:error] = 'Error, updating profile'
       render 'edit'
