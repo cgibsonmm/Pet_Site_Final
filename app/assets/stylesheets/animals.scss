@@ -1,24 +1,93 @@
-.hidden {
-  display: none;
-}
+// containing div
 
 .pet_cards {
-  background-color: white;
-
+  width: 100vw;
+  // pet navbar
   .nav-tabs {
     font-size: 1.1em;
-    width: 100vw;
   }
 
-  .pet-name {
-    text-decoration: underline;
+  // pet card
+  .tab-content {
+    width: 80vw;
+    border: 1px solid rgb(67, 74, 74);
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 1px rgb(145, 145, 145);
+
+    .pet-card {
+      background-color: #f8f9fa;
+      justify-content: flex-start;
+      display: flex;
+      flex-direction: column;
+
+      .top-area {
+        display: flex;
+        padding: 20px 0 0 20px;
+
+        .pet_img {
+          margin: 5px 20px 5px 5px;
+          border-radius: 50%;
+          background-clip: content-box;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          border: 1px solid rgb(126, 126, 126);
+          height: 200px;
+          width: 200px;
+          box-shadow: 1px 2px 3px 1px rgb(146, 146, 147);
+        }
+
+        .pet_info {
+          padding-top: 5px;
+          min-height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          .pet-name {
+            text-decoration: underline;
+          }
+        }
+
+        .medical-hx {
+          padding-top: 5px;
+          flex-grow: 1;
+          text-align: center;
+          margin-left: 50px;
+        }
+      }
+
+      .bottom-area {
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          text-decoration: underline;
+        }
+
+        .pet-shots {
+          padding-bottom: 20px;
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+
+          .shot {
+            height: 100px;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(246, 203, 31);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
   }
-
-  .pet_image {}
-
-  div * {}
-}
-// form styles
-.card.pet_card{
-  
 }

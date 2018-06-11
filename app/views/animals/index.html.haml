@@ -5,11 +5,31 @@
         = pet.name
     .nav-item.nav-link
       = link_to 'Add new Pet', new_user_animal_path(@user)
-  .tab-content
+  .tab-content.mx-auto.mt-3
     - @animals.each_with_index do |pet, i|
-      .col-lg-8.pet-card{ class: "card-#{i}"}
-        %h3.pet-name.pt-2= pet.name
-        = image_tag pet.image.url(:medium)
-        %p= "age: #{animal_age(pet.dob)} old"
-        %p= "Birthday: #{pet.dob.strftime('%m/%d/%Y')}"
+      .pet-card{ class: "card-#{i}"}
+        .top-area
+          .pet_img{style:"background-image: url(#{pet.image.url(:medium)});"}
+          .pet_info
+            %h3.pet-name= pet.name
+            %p= pet.species
+            %p= "age: #{animal_age(pet.dob)} old"
+            %p= "Birthday: #{pet.dob.strftime('%m/%d/%Y')}"
+          .medical-hx
+            %h4 #{pet.name}'s Medical History
+
+            %p= pet.medical_history
         = link_to 'Edit', edit_animal_path(pet)
+        .bottom-area
+          %h3 Shot Records
+          .pet-shots
+            .shot
+              %h5 Rabies
+              %p May 31
+            .shot
+              %h5 Parvo
+              %p May 31
+            .shot
+              %p May 31
+            .shot
+              %p May 31
