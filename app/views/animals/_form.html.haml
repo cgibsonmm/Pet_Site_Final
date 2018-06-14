@@ -6,7 +6,7 @@
     = f.input :image
     = f.input :name
     = f.input :dob, as: :date, start_year: Date.today.year - 30, end_year: Date.today.year, order: [:month, :day, :year]
-    = f.input :species
+    = f.input :species, collection: %w(Cat Dog Bird Horse Other)
     = f.input :medical_history
 
   .form-actions

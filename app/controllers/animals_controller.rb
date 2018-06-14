@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :set_animal, only: [:show, :edit, :update, :destroy]
+  before_action :set_animal, only: [:show, :edit, :update, :destroy, :crop]
   before_action :set_posts, only: [:index]
   before_action :authenticate_user!
   before_action :set_user
@@ -42,7 +42,7 @@ class AnimalsController < ApplicationController
   # PATCH/PUT /animals/1.json
   def update
     respond_to do |format|
-      if @animal.update(animal_params)
+      if @animal.update(update_params)
         format.html { redirect_to user_animals_url(@user), notice: 'Animal was successfully updated.' }
         format.json { render :index, status: :ok, location: @animal }
       else
@@ -84,5 +84,23 @@ class AnimalsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def animal_params
     params.require(:animal).permit(:image, :name, :user_id, :dob, :species, :medical_history)
+  end
+
+  def update_params
+    params.require(:animal).permit(
+      :image,
+      :image_original_w,
+      :image_original_h,
+      :image_crop_x,
+      :image_crop_y,
+      :image_crop_w,
+      :image_crop_h,
+      :image_box_w,
+      :image_aspect,
+      :name,
+      :dob,
+      :species,
+      :medical_history
+    )
   end
 end

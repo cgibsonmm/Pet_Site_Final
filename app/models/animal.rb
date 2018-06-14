@@ -6,4 +6,7 @@ class Animal < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   crop_attached_file :image
+
+  validates :name, presence: true, length: { in: 3..12 }
+  validates :species, presence: true
 end

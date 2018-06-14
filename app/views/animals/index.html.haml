@@ -9,7 +9,9 @@
     - @animals.each_with_index do |pet, i|
       .pet-card{ class: "card-#{i}"}
         .top-area
-          .pet_img{style:"background-image: url(#{pet.image.url(:medium)});"}
+          .image-area
+            .pet_img{style:"background-image: url(#{pet.image.url(:medium)});"}
+            = link_to "Crop Image", crop_animal_path(@animal = pet), data: { turbolinks: :false }
           .pet_info
             %h3.pet-name= pet.name
             %p= pet.species
