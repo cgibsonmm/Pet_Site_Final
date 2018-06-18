@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       member do
         get 'crop'
       end
-      resources :shot_records, only: [:create]
+      resources :shot_records
     end
   end
 

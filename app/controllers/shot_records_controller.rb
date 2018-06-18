@@ -4,8 +4,12 @@ class ShotRecordsController < ApplicationController
     @shot_record = @animal.shot_records.build(record_params)
     if @shot_record.save
       flash[:success] = 'Successfully created Shot Record'
-      redirect_to user_animals_path(current_user)
+      respond_to do |format|
+        format.html { redirect_to user_animals_path(current_user)}
+        format.js
+      end
     end
+
   end
 
 

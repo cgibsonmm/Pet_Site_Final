@@ -1,2 +1,5 @@
-= shot_record.name
-= frequecy_display(shot_record.frequency)
+= link_to '#', class:'shot-badge' do
+  = fa_icon "medkit"
+  %h5.badge-heading
+    = shot_record.name
+  = frequecy_display(shot_record.frequency)

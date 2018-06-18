@@ -7,7 +7,7 @@
         %button.close{type: 'button', 'data-dismiss': 'modal', 'aria-labe': 'Close' }
           %span &times;
       .modal-content
-        = simple_form_for([@animal, animal.shot_records.build]) do |f|
+        = simple_form_for([@animal, animal.shot_records.build], remote: true) do |f|
           = f.input :name, label: 'Shot Name'
           = f.input :due_date
           = f.input :date_recived

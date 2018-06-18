@@ -26,5 +26,7 @@
           %h3 Shot Records
           .pet-shots
             - if pet.shot_records
-              = render pet.shot_records, animal: pet
-            = render 'shot_records/modal', animal: pet
+              .records-list{id:"pet-#{pet.id}"}
+                = render pet.shot_records, animal: pet
+            .shot-button
+              = render 'shot_records/modal', animal: pet
