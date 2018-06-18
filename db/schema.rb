@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180614050635) do
+ActiveRecord::Schema.define(version: 20180618093924) do
 
   create_table "animals", force: :cascade do |t|
     t.string "name"
@@ -59,6 +59,18 @@ ActiveRecord::Schema.define(version: 20180614050635) do
     t.integer "image_crop_w"
     t.integer "image_crop_h"
     t.index ["user_id"], name: "index_photo_posts_on_user_id"
+  end
+
+  create_table "shot_records", force: :cascade do |t|
+    t.integer "animal_id"
+    t.string "name"
+    t.date "due_date"
+    t.date "date_recived"
+    t.integer "frequency"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["animal_id"], name: "index_shot_records_on_animal_id"
   end
 
   create_table "user_profiles", force: :cascade do |t|
