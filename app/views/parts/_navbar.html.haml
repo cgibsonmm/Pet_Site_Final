@@ -1,8 +1,7 @@
 %nav.navbar.navbar-expand-md.navbar-light.bg-light
   -# = link_to 'APetsLyfe', root_path,class: 'navbar-brand', id: 'brandName'
   = link_to root_path, class: 'navbar-brand', id: 'brandName' do
-    APetsLyfe
-    %i{class: 'fa fa-paw', 'data-fa-transform': "shrink-4 up-.5 rotate-45", 'data-fa-mask': "fas fa-circle"}
+    %h4 APetsLyfe
   %button.navbar-toggler{type: 'button', 'data-toggle': 'collapse', 'data-target': "#navContent", 'aria-controls': "navContent", 'aria-expanded': "false", 'aria-label': "Toggle navigation"}
     %span.navbar-toggler-icon
 
@@ -27,12 +26,15 @@
         %a.nav-link.dropdown-toggle#navbar-dropdown{href: '#', 'role': 'button', 'data-toggle': 'dropdown'}
           Services
         .dropdown-menu
-          = link_to 'Adopt A Pet', find_a_pet_index_path, class: 'dropdown-item'
+          = link_to find_a_pet_index_path, class: 'dropdown-item' do
+            = fa_icon 'globe'
+            Adopt a Pet
           %a.dropdown-item{href: '#'}
+            = fa_icon 'leaf'
             Closest Park
           %a.dropdown-item{href: '#'}
+            = fa_icon 'user-md'
             Animal Clinic
-            %i{class:'fa fa-syringe'}
     - if user_signed_in?
       %ul.navbar-nav.user-area
         %li.nav-item.dropdown

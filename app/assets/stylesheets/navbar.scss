@@ -1,30 +1,72 @@
 @import url('https://fonts.googleapis.com/css?family=Mogra|Abril+Fatface');
 
-#brandName{
-  font-family: 'Lato';
-  font-weight: 700;
-  font-size:2em;
-  color:#039BE5;
+nav{
+  position: absolute;
+  box-shadow: 0px 2px 2px rgb(157, 157, 157);
+  height: 60px;
+
+  #brandName {
+    position: absolute;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 2em;
+    color: #039BE5;
+    margin-top:10px;
+    opacity: 0;
+    animation: 1s slide-up 0.5s forwards;
+
+    h4{
+      text-shadow: 1px 1px 2px rgb(167, 167, 167);
+    }
+  }
+
+  .dropdown-item,
+  .nav-link {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 600;
+
+    &:hover{
+      animation: 0.5s grow forwards;
+    }
+  }
+
+  .nav-item.paw {
+    padding: 8px 20px;
+    color: #039BE5;
+  }
+
+  .user-area .nav-item a.nav-link {
+    color: #039BE5;
+    font-weight: 600;
+  }
+  @media (max-width:1000px) {
+    .paw {
+      display: none;
+    }
+  }
 }
 
-.nav-link, .dropdown-item{
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight:600;
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
-.nav-item.paw{
-  padding:8px 20px;
-  color:#039BE5;
+@keyframes slide-up{
+  100%{
+    margin:0;
+    opacity: 1;
+  }
 }
-
-.user-area .nav-item a.nav-link{
-  color:#039BE5;
-  font-weight:600;
-}
-
-@media (max-width:1000px){
-  .paw{
-    display:none;
+@keyframes grow {
+  0%{
+    font-size: 1em;
+  }
+  100%{
+    font-size: 1.05em;
   }
 }
