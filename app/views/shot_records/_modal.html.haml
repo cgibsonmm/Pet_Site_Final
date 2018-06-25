@@ -7,9 +7,9 @@
         %button.close{type: 'button', 'data-dismiss': 'modal', 'aria-labe': 'Close' }
           %span &times;
       .modal-content
-        = simple_form_for([@animal, animal.shot_records.build], remote: true) do |f|
-          = f.input :name, label: 'Shot Name'
+        = simple_form_for([@animal, animal.shot_records.build], remote: true, name: 'RecordForm') do |f|
+          = f.input :name, label: 'Shot Name', id: 'shot-name'
           = f.input :due_date
           = f.input :date_recived
           = f.input :frequency, as: :radio_buttons, collection: [['1 Year', 1], ['2 Years', 2]]
-          = f.button :submit
+          = f.button :submit, class: 'btn btn-danger', id: 'record-submit-button'

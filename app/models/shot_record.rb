@@ -1,5 +1,5 @@
 class ShotRecord < ApplicationRecord
   belongs_to :animal
 
-  validates :name, presence: true
+  validates :name, presence: { message: "Name can't be blank." }
 end
