@@ -11,10 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
 //= require jquery.jcrop
 //= require papercrop
 //= require rails-ujs
 //= require turbolinks
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require_tree .

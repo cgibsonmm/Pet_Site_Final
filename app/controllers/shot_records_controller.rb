@@ -1,5 +1,15 @@
 class ShotRecordsController < ApplicationController
   before_action :set_animal
+
+
+  # May use this
+  # def new
+  #   respond_to do |format|
+  #     format.html { render :new}
+  #     format.js
+  #   end
+  # end
+
   def create
     @shot_record = @animal.shot_records.build(record_params)
     if @shot_record.validate(params[:name])
