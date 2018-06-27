@@ -44,6 +44,7 @@ gem 'paperclip', '~>6.0.0'
 gem 'papercrop'
 gem 'font-awesome-rails'
 gem "auto_build"
+gem 'actionview-encoded_mail_to'
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'simple_form'
@@ -60,6 +61,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rack-cors', require: 'rack/cors'
 end
 
 group :development do
