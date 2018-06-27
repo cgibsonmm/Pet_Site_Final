@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :photo_posts do
+    resource :like, module: :photo_posts
     resources :comments
     member do
       get 'crop'

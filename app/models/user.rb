@@ -7,12 +7,18 @@ class User < ApplicationRecord
   has_one :user_profile, dependent: :destroy
   has_many :comments
   has_many :animals
+  has_many :likes
 
   after_create :build_user_profile
 
   has_many :photo_posts, dependent: :destroy
 
   validates :user_name, presence: true, length: { in: 5..12 }
+
+
+  def likes?(post)
+    post.likes.where(user_id: id).any?
+  end
 
   private
 
