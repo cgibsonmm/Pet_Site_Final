@@ -1,0 +1,15 @@
+%button.btn.btn-primary{type: 'button', 'data-target': "#modal-#{animal.id}", 'data-toggle': 'modal'} Add Shot Record
+.modal.fade{id: "modal-#{animal.id}"}
+  .modal-dialog{'role': 'document'}
+    .modal-content
+      .modal-header
+        %h5 Fill in Record information
+        %button.close{type: 'button', 'data-dismiss': 'modal', 'aria-labe': 'Close' }
+          %span &times;
+      .modal-content
+        = simple_form_for([@animal, animal.shot_records.build], validate: true, remote: true, name: 'RecordForm') do |f|
+          = f.input :name, label: 'Shot Name', id: 'shot-name'
+          = f.input :due_date
+          = f.input :date_recived
+          = f.input :frequency, as: :radio_buttons, collection: [['1 Year', 1], ['2 Years', 2]]
+          = f.button :submit, class: 'btn btn-danger', id: 'record-submit-button'

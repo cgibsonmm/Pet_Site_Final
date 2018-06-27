@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'jquery-rails'
-gem 'simple_form'
+
 gem 'haml-rails'
 gem 'devise'
 gem 'country_select'
@@ -46,6 +46,9 @@ gem 'font-awesome-rails'
 gem "auto_build"
 
 gem 'bootstrap', '~> 4.0.0'
+gem 'simple_form'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 
 group :development, :test do
   gem 'pry'

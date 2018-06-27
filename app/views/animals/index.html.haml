@@ -5,7 +5,28 @@
         = pet.name
     .nav-item.nav-link
       = link_to 'Add new Pet', new_user_animal_path(@user)
-  .tab-content
+  .tab-content.mx-auto.mt-3
     - @animals.each_with_index do |pet, i|
-      .col-lg-8.pet-card{ class: "card-#{i}"}
-        %h3.pet-name.pt-2= pet.name
+      .pet-card{ class: "card-#{i}"}
+        .top-area
+          .image-area
+            .pet_img{style:"background-image: url(#{pet.image.url(:medium)});"}
+            = link_to "Crop Image", crop_animal_path(@animal = pet), data: { turbolinks: :false }
+          .pet_info
+            %h3.pet-name= pet.name
+            %p= pet.species
+            %p= "age: #{animal_age(pet.dob)} old"
+            %p= "Birthday: #{pet.dob.strftime('%m/%d/%Y')}"
+          .medical-hx
+            %h4 #{pet.name}'s Medical History
+
+            %p= pet.medical_history
+        = link_to 'Edit', edit_animal_path(pet), class:'btn btn-secondary button'
+        .bottom-area
+          %h3 Shot Records
+          .pet-shots
+            - if pet.shot_records
+              .records-list{id:"pet-#{pet.id}"}
+                = render pet.shot_records, animal: pet
+            .shot-button
+              = render 'shot_records/modal', animal: pet

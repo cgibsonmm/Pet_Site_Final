@@ -10,7 +10,12 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :user_profile, shallow: true
-    resources :animals, shallow: true
+    resources :animals, shallow: true do
+      member do
+        get 'crop'
+      end
+      resources :shot_records
+    end
   end
 
   resources :photo_posts do
