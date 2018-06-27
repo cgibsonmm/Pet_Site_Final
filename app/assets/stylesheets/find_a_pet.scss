@@ -3,12 +3,17 @@
   flex-wrap:wrap;
   width:100vw;
 
-  .pet_card{
+  .found_pet_card{
     width:20%;
     height:300px;
     background-clip: content-box;
     background-size: cover;
     background-position: center;
+
+    button{
+      align-items:center;
+      justify-content: center;
+    }
   }
   .popover{
     display: none;
@@ -18,7 +23,7 @@
 @media(max-width:1000px){
   #petsList{
 
-    .pet_card{
+    .found_pet_card{
       width: 50%;
     }
   }

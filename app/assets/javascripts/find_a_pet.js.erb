@@ -32,6 +32,7 @@ document.addEventListener('turbolinks:load', function(){
         var petInfo = Object.values(pet.description)
         var strInfo = JSON.stringify(petInfo)
         var petBreed = Object.values(pet.breeds.breed)
+        var contactInfo = Object.values(pet.contact.email)
 
         //Need to ask stack overflow about this.
         // function parseBreeds(breeds, name){
@@ -48,8 +49,29 @@ document.addEventListener('turbolinks:load', function(){
 
 // TODO: Need to finish hiding and showing popover
         $('#petsList').append(
-          '<li class="pet_card" style="background-image: url('+ petImage +')">'+
-          '<li class="">'+ strInfo +'</li'
+          '<li class="found_pet_card" style="background-image: url('+ petImage +')">' +
+
+          `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            `+ petName +`
+          </button>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">`+ petName +`</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  `+ petInfo +`
+                </div>
+                <div class="modal-footer">
+                  <p> Please Email <strong>`+contactInfo+`</strong> for more info.</p>                </div>
+              </div>
+            </div>
+          </div>`
         )
       })
     })

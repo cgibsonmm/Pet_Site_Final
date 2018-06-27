@@ -44,6 +44,7 @@ gem 'paperclip', '~>6.0.0'
 gem 'papercrop'
 gem 'font-awesome-rails'
 gem "auto_build"
+gem 'actionview-encoded_mail_to'
 
 gem 'bootstrap', '~> 4.0.0'
 
