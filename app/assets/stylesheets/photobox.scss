@@ -33,23 +33,16 @@ li{
 @media (max-width:1000px){
   .photobox{
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     .main{
-      flex-basis: 50%;
-      li{
-        min-width:200px;
-        min-height:200px;
-        max-width: 200px;
-        max-height: 200px;
-      }
+      min-width:80%;
     }
-    .small{
-      flex-basis: 50;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      li{
-      }
-    }
+  }
+}
+
+@media(max-width:800px){
+  .photobox{
+    display: none;
   }
 }

@@ -1,3 +1,3 @@
 - flash.each do |type, msg|
-  %div.flash{class: type}
+  %div{class: parse_flash(type)}
     = msg
