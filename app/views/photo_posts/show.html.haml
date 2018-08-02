@@ -4,6 +4,8 @@
   .user-caption
     = @photo_post.user.user_name
     = @photo_post.caption
+    %div{id:"photo_post_#{@photo_post.id}_likes"}
+      = render partial: 'likes', locals: {photo_post: @photo_post}
   .comments{id: "comments_#{@photo_post.id}"}
     - if @photo_post.comments
       = render @photo_post.comments, post: @photo_post
