@@ -25,15 +25,18 @@ document.addEventListener('turbolinks:load', function(){
     })
     .done(function(data){
       var returnedPets = data.petfinder.pets.pet
-      returnedPets.forEach(function(pet){
-        console.log(pet)
+      returnedPets.forEach(function(pet, i){
         var petName = Object.values(pet.name)
         var petImage =  (Object.values(pet.media.photos.photo[2])[1])
         var petInfo = Object.values(pet.description)
         var strInfo = JSON.stringify(petInfo)
         var petBreed = Object.values(pet.breeds.breed)
         var contactInfo = Object.values(pet.contact.email)
+        var currentBreed = ''
 
+        petBreed.forEach(function(breed){
+          currentBreed = breed
+        });
         //Need to ask stack overflow about this.
         // function parseBreeds(breeds, name){
         //   var div = '.' + name + '_breeds'
@@ -51,15 +54,16 @@ document.addEventListener('turbolinks:load', function(){
         $('#petsList').append(
           '<li class="found_pet_card" style="background-image: url('+ petImage +')">' +
 
-          `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#petModal-`+i+`">
             `+ petName +`
           </button>
 
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="petModal-`+i+`" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">`+ petName +`</h5>
+                  <p>`+currentBreed+`</p>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
