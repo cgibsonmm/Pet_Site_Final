@@ -1,0 +1,6 @@
+- if user_signed_in? && current_user.likes?(photo_post)
+  = link_to 'Unlike', photo_post_likes_path(photo_post), method: :delete, remote: true
+- else
+  = link_to 'Like', photo_post_likes_path(photo_post), method: :post, remote: true
+
+= photo_post.likes.count

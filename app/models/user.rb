@@ -7,6 +7,11 @@ class User < ApplicationRecord
   has_one :user_profile, dependent: :destroy
   has_many :comments
   has_many :animals
+  has_many :likes
+
+  def likes?(photo_post)
+    photo_post.likes.where(user_id: id).any?
+  end
 
   after_create :build_user_profile
 
