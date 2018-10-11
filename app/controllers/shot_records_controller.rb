@@ -5,6 +5,7 @@ class ShotRecordsController < ApplicationController
     @shot_record = @animal.shot_records.build(record_params)
     if @shot_record.save
       respond_to do |format|
+        format.html {redirect_to user_animals_path(current_user.id)}
         format.js
       end
     end

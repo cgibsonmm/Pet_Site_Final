@@ -19,7 +19,6 @@ RSpec.feature 'Creating a shot record for animal' do
       choose '1 Year'
       click_button 'Create Shot record'
 
-      expect(page).to have_content('Successfully created Shot Record')
       expect(page).to have_content('Rabies')
       expect(page).to have_content('Due in 1 Year.')
     end

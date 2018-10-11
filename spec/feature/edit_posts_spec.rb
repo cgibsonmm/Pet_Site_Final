@@ -33,7 +33,7 @@ RSpec.feature 'Edit Posts' do
 
     scenario 'must own post to edit post through link' do
       click_link 'All Posts'
-      find(:xpath, "//a[contains(@href, 'photo_posts/2')]").click
+      find(:xpath, "//a[contains(@href, 'photo_posts/2')]", match: :first).click
       expect(page).not_to have_content('Edit Post')
     end
 

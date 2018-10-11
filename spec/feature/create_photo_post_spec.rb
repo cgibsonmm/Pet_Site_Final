@@ -30,7 +30,7 @@ RSpec.feature 'Creating Photo Post' do
       fill_in 'Caption', with: 'There is no photo'
       click_button 'Create'
 
-      expect(page).to have_css('div.flash.error')
+      expect(page).to have_css('div.flash.alert-danger')
       expect(page).to have_content('Error, creating post')
     end
   end

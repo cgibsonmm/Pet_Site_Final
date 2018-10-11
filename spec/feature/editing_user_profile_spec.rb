@@ -25,7 +25,7 @@ RSpec.feature 'Editing User Profile' do
       select('United States', from: 'Country')
       click_button 'Update'
 
-      expect(page).to have_content("Profile Updated")
+      expect(page).to have_content("Profile updated successfully!")
     end
 
     scenario 'User must own profile to edit it' do

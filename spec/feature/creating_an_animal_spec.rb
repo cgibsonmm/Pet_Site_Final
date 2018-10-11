@@ -29,11 +29,11 @@ RSpec.feature 'Creating Animal' do
     scenario 'Name must be within correct length' do
       fill_in 'Name', with: 'a' * 1
       click_button 'Create Animal'
-      expect(page).to have_content("Nameis too short")
+      expect(page).to have_content("Name is too short")
 
       fill_in 'Name', with: 'q' * 13
       click_button 'Create Animal'
-      expect(page).to have_content("Nameis too long")
+      expect(page).to have_content("Name is too long")
     end
 
     scenario 'Species must be present' do

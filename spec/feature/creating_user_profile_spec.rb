@@ -17,7 +17,7 @@ RSpec.feature 'Creating user profile' do
       fill_in 'State', with: 'NY'
       select('United States', from: 'Country')
       click_button 'Update User profile'
-      expect(page).to have_css('div.flash.success')
+      expect(page).to have_css('div.flash.alert-success')
     end
   end
 
@@ -30,7 +30,7 @@ RSpec.feature 'Creating user profile' do
       fill_in 'State', with: ''
 
       click_button 'Update User profile'
-      expect(page).to have_css('div.flash.error')
+      expect(page).to have_css('div.flash.alert-danger')
       expect(page).to have_content("can't be blank")
     end
   end

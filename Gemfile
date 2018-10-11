@@ -46,7 +46,7 @@ gem 'font-awesome-rails'
 gem "auto_build"
 gem 'actionview-encoded_mail_to'
 
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap'
 gem 'simple_form'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
