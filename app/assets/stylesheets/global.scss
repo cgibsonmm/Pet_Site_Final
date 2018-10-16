@@ -3,15 +3,29 @@
   margin: 0;
   box-sizing: border-box;
 }
+.background-img{
+  background-image: image_url("bg-1");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 body{
   background-color: $light_grey !important;
   // background-image: url(image_path('bg-1.jpg'))
+  // .dynamic-content{
+  //   background-color: $dark_gray;
+  //   padding-bottom: 20px;
+  // }
 }
 
 .container-fluid{
   min-height: 100vh;
   padding: 0;
+}
+
+.content{
+ min-width: 100%;
 }
 
 a{
@@ -41,8 +55,7 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 0 100px;
-  padding: 15px 0;
+  padding: 0 0 15px 0;
 }
 
 @media (max-width:800px) {

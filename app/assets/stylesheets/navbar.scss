@@ -1,12 +1,21 @@
+.navbar-bg{
+  // background-color: rgb(15, 146, 201);
+  background-color: $test-orange-trans-bg;
+  border-bottom: 2px solid $test-orange;
+  box-shadow: 0 0px 3px 0px rgb(0, 0, 0);
+}
 .navbar{
-  background-color: rgb(15, 146, 201);
   .navbar-brand{
+    color: $test-orange;
+    &:hover{
+      color: $test-orange-trans;
+    }
     h4{
       opacity: 0;
       font-family: 'Archivo Narrow', sans-serif;
       font-weight:bold;
       font-size:2rem;
-      text-shadow: 0px 0px 1px rgb(66, 66, 66);
+      text-shadow: 1px 1px 1.5px rgb(66, 66, 66);
       animation: 0.3s fade-in 0.2s forwards;
     }
   }

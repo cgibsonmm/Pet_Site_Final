@@ -1,28 +1,30 @@
-.pet_cards.mt-3
-  .nav.nav-tabs
+.pet_cards.card.border-primary.mt-2
+  .nav.nav-pills.card-header
     - @animals.each_with_index do |pet, i|
       .nav-item.nav-link.pet{'href': '#', class: "pet-#{i}"}
         = pet.name
-    .nav-item.nav-link
+    .nav-item.nav-link.ml-auto
       = link_to 'Add new Pet', new_user_animal_path(@user)
-  .tab-content.mx-auto.mt-3
+  .card-content.mx-auto.mt-3
     - @animals.each_with_index do |pet, i|
       .pet-card{ class: "card-#{i}"}
         .top-area
-          .image-area
+          .image-area.pl-3
             .pet_img{style:"background-image: url(#{pet.image.url(:medium)});"}
             = link_to "Crop Image", crop_animal_path(@animal = pet), data: { turbolinks: :false }
-          .pet_info
-            %h3.pet-name= pet.name
+          .pet-info.pl-3
+            %h3.pet-name
+              %u
+                = pet.name.capitalize
             %p= pet.species
             %p= "age: #{animal_age(pet.dob)} old"
             %p= "Birthday: #{pet.dob.strftime('%m/%d/%Y')}"
-          .medical-hx
-            %h4 #{pet.name}'s Medical History
+          .medical-hx.mx-auto
+            %h4 #{pet.name.capitalize}'s Medical History
 
             %p= pet.medical_history
-        = link_to 'Edit', edit_animal_path(pet), class:'btn btn-secondary button'
-        .bottom-area
+            = link_to 'Edit', edit_animal_path(pet), class:'btn btn-secondary hx-edit-btn'
+        .bottom-area.card-footer.mt-3
           %h3 Shot Records
           .pet-shots
             - if pet.shot_records

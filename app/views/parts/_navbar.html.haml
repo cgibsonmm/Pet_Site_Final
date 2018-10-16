@@ -1,45 +1,47 @@
-%nav.navbar.navbar-expand-lg
-  -# = link_to 'APetsLyfe', root_path,class: 'navbar-brand', id: 'brandName'
-  = link_to root_path, class: 'navbar-brand', id: 'brandName' do
-    %h4 APetsLyfe
-  %button.navbar-toggler.custom-toggle{type: 'button', 'data-toggle': 'collapse', 'data-target': "#navContent", 'aria-controls': "navContent", 'aria-expanded': "false", 'aria-label': "Toggle navigation"}
-    %span.navbar-toggler-icon.custom-toggle-icon
+.navbar-bg
+  .container
+    %nav.navbar.navbar-expand-lg.navbar-transperent
+      -# = link_to 'APetsLyfe', root_path,class: 'navbar-brand', id: 'brandName'
+      = link_to root_path, class: 'navbar-brand', id: 'brandName' do
+        %h4 APetsLyfe
+      %button.navbar-toggler.custom-toggle{type: 'button', 'data-toggle': 'collapse', 'data-target': "#navContent", 'aria-controls': "navContent", 'aria-expanded': "false", 'aria-label': "Toggle navigation"}
+        %span.navbar-toggler-icon.custom-toggle-icon
 
-  -# Nav Links
-  .collapse.navbar-collapse#navContent
-    %ul.navbar-nav.mr-auto.ml-auto
-      %li.nav-item
-        = link_to 'New Post', new_photo_post_path, class: 'nav-link'
-      %li.nav-item
-        = link_to 'All Posts', photo_posts_path, class: 'nav-link'
-      - if user_signed_in?
-        %li.nav-item
-          = link_to 'My Pets', user_animals_path(current_user), class: 'nav-link'
-      %li.nav-item.dropdown
-        %a.nav-link.dropdown-toggle#navbar-dropdown{href: '#', 'role': 'button', 'data-toggle': 'dropdown'}
-          Services
-        .dropdown-menu
-          = link_to find_a_pet_index_path, class: 'dropdown-item' do
-            = fa_icon 'globe'
-            Adopt a Pet
-          %a.dropdown-item{href: '#'}
-            = fa_icon 'leaf'
-            Closest Park
-          %a.dropdown-item{href: '#'}
-            = fa_icon 'user-md'
-            Animal Clinic
-    - if user_signed_in?
-      %ul.navbar-nav.user-area
-        %li.nav-item.dropdown
-          %a.nav-link.dropdown-toggle#account-dropdown{href: '#', 'role': 'button', 'data-toggle': 'dropdown'}
-            My Account
-          .dropdown-menu
-            = link_to 'My Profile', user_profile_path(current_user), class: 'dropdown-item'
-        %li.nav-item
-          = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
-    - else
-      %ul.navbar-nav.user-area
-        %li.nav-item
-          = link_to 'Sign In', new_user_session_path, class: 'nav-link'
-        %li.nav-item
-          = link_to 'Sign Up', new_user_registration_path, class: 'nav-link', id: 'sign_up_nav'
+      -# Nav Links
+      .collapse.navbar-collapse#navContent
+        %ul.navbar-nav.mr-auto.ml-auto
+          %li.nav-item
+            = link_to 'New Post', new_photo_post_path, class: 'nav-link'
+          %li.nav-item
+            = link_to 'All Posts', photo_posts_path, class: 'nav-link'
+          - if user_signed_in?
+            %li.nav-item
+              = link_to 'My Pets', user_animals_path(current_user), class: 'nav-link'
+          %li.nav-item.dropdown
+            %a.nav-link.dropdown-toggle#navbar-dropdown{href: '#', 'role': 'button', 'data-toggle': 'dropdown'}
+              Services
+            .dropdown-menu
+              = link_to find_a_pet_index_path, class: 'dropdown-item' do
+                = fa_icon 'globe'
+                Adopt a Pet
+              %a.dropdown-item{href: '#'}
+                = fa_icon 'leaf'
+                Closest Park
+              %a.dropdown-item{href: '#'}
+                = fa_icon 'user-md'
+                Animal Clinic
+        - if user_signed_in?
+          %ul.navbar-nav.user-area
+            %li.nav-item.dropdown
+              %a.nav-link.dropdown-toggle#account-dropdown{href: '#', 'role': 'button', 'data-toggle': 'dropdown'}
+                My Account
+              .dropdown-menu
+                = link_to 'My Profile', user_profile_path(current_user), class: 'dropdown-item'
+            %li.nav-item
+              = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
+        - else
+          %ul.navbar-nav.user-area
+            %li.nav-item
+              = link_to 'Sign In', new_user_session_path, class: 'nav-link'
+            %li.nav-item
+              = link_to 'Sign Up', new_user_registration_path, class: 'nav-link', id: 'sign_up_nav'

@@ -1,0 +1,3 @@
+def site_description
+  "A community to bond and chat with animal and pet lovers just like you, A website where you can create a profile for your pet and organize your pets life in just one click, find pet stores, animal shelters, dog parks, animal hospitals near you. You can interact with other people with similar interests and learn more about your pet. Share your pets special moments by up loading a picture or Video onto your pets page and sharing it with love ones or with the online community. Never lose sight on what’s most important for your pets life. Let’s make your life and your pets life easier."
+end

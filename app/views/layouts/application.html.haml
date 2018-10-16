@@ -6,11 +6,13 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
+  %body.background-img
     .container-fluid
       = render 'parts/navbar'
-      = render 'parts/flash'
-      %section
-        -if controller_name == 'home' && @post.length > 1
-          = render 'parts/photobox'
-        = yield
+      .dynamic-content.container
+        = render 'parts/flash'
+        %section
+          -if controller_name == 'home' && @post.length > 1
+            = render 'parts/photobox'
+          .content
+            = yield

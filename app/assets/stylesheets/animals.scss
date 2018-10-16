@@ -1,102 +1,143 @@
-// containing div
-.button{
-  align-self: center;
-  color:rgb(255, 255, 255) !important;
-}
 .pet_cards {
-  width: 100vw;
-  // pet navbar
-  .nav-tabs {
-    font-size: 1.1em;
-  }
+  min-width: 100%;
 
-  // pet card
-  .tab-content {
-    width: 80vw;
+  .nav {}
+
+  .card-content {
+    width: 100%;
 
     .pet-card {
-      background-color: #f8f9fa;
-      justify-content: flex-start;
       display: flex;
       flex-direction: column;
-      border-radius: 5px;
-      box-shadow: 3px 3px 5px 3px rgb(149, 149, 149);
-      border: 1px solid rgb(92, 92, 92);
 
       .top-area {
         display: flex;
-        padding: 20px 0 0 20px;
 
-        .pet_img {
-          margin: 5px 20px 5px 5px;
-          border-radius: 50%;
-          background-clip: content-box;
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          border: 1px solid rgb(126, 126, 126);
-          height: 200px;
-          width: 200px;
-          box-shadow: 1px 2px 3px 1px rgb(146, 146, 147);
-        }
-
-        .pet_info {
-          padding-top: 5px;
-          min-height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-
-          .pet-name {
-            text-decoration: underline;
+        .image-area {
+          .pet_img {
+            margin: 5px 20px 5px 5px;
+            border-radius: 4px;
+            background-clip: content-box;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid rgb(126, 126, 126);
+            height: 200px;
+            width: 200px;
+            box-shadow: 1px 2px 3px 1px rgb(146, 146, 147);
           }
         }
 
         .medical-hx {
-          padding-top: 5px;
-          flex-grow: 1;
-          text-align: center;
-          margin-left: 50px;
-        }
-      }
-
-      .edit-button{
-        align-self:center;
-        color:rgb(246, 246, 246);
-      }
-
-      .bottom-area {
-        padding-top: 40px;
-        display: flex;
-        flex-direction: column;
-
-        h3 {
-          text-decoration: underline;
-        }
-
-        .pet-shots {
-          padding-bottom: 20px;
           display: flex;
-          justify-content: space-around;
-          width: 100%;
-
-          .shot {
-            height: 100px;
-            width: 100px;
-            display: flex;
-            flex-direction: column;
-            background-color: rgb(246, 203, 31);
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 1px 1px 1px 2px rgb(140, 140, 140);
-
-            p {
-              margin-bottom: 0;
-            }
-          }
+          flex-direction: column;
+          justify-content: space-between;
         }
       }
+
+      .bottom-area {}
     }
   }
 }
+// ***** OLD *****
+// containing div
+// .button{
+//   align-self: center;
+//   color:rgb(255, 255, 255) !important;
+// }
+// .pet_cards {
+//   min-width: 100%;
+//   // pet navbar
+//   .nav-tabs {
+//     font-size: 1.1em;
+//   }
+//
+//   // pet card
+//   .tab-content {
+//
+//     .pet-card {
+//       background-color: $light_grey;
+//       justify-content: flex-start;
+//       display: flex;
+//       flex-direction: column;
+//       border-radius: 5px;
+//       box-shadow: 0px 0px 5px 1px rgb(149, 149, 149);
+//       border: 1px solid $dark_gray;
+//
+//       .top-area {
+//         display: flex;
+//         padding: 20px 0 0 20px;
+//
+//         .pet_img {
+//           margin: 5px 20px 5px 5px;
+//           border-radius: 50%;
+//           background-clip: content-box;
+//           background-size: cover;
+//           background-position: center;
+//           background-repeat: no-repeat;
+//           border: 1px solid rgb(126, 126, 126);
+//           height: 200px;
+//           width: 200px;
+//           box-shadow: 1px 2px 3px 1px rgb(146, 146, 147);
+//         }
+//
+//         .pet_info {
+//           padding-top: 5px;
+//           min-height: 100%;
+//           display: flex;
+//           flex-direction: column;
+//           justify-content: flex-start;
+//
+//           .pet-name {
+//             text-decoration: underline;
+//           }
+//         }
+//
+//         .medical-hx {
+//           padding-top: 5px;
+//           flex-grow: 1;
+//           text-align: center;
+//           margin-left: 50px;
+//         }
+//       }
+//
+//       .edit-button{
+//         align-self:center;
+//         color:rgb(246, 246, 246);
+//       }
+//
+//       .bottom-area {
+//         padding-top: 40px;
+//         display: flex;
+//         flex-direction: column;
+//
+//         h3 {
+//           text-decoration: underline;
+//         }
+//
+//         .pet-shots {
+//           padding-bottom: 20px;
+//           display: flex;
+//           justify-content: space-around;
+//           width: 100%;
+//
+//           .shot {
+//             height: 100px;
+//             width: 100px;
+//             display: flex;
+//             flex-direction: column;
+//             background-color: rgb(246, 203, 31);
+//             border-radius: 50%;
+//             align-items: center;
+//             justify-content: center;
+//             box-shadow: 1px 1px 1px 2px rgb(140, 140, 140);
+//
+//             p {
+//               margin-bottom: 0;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
